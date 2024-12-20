@@ -16,39 +16,6 @@
   <script src="/modules/iconify-icon.min.js"></script>
   <link rel="manifest" href="/manifest.json">
   <style>
-
-    img[width][height] {
-      height: auto;
-    }
-
-    a:not(.btn, :has(*:not(span))) {
-      background: linear-gradient(to top, var(--m3-scheme-primary) 50%, transparent 50%);
-      background-size: 100% 200%;
-      background-position: 0 7.5%;
-      border-radius: .25rem;
-      background-repeat: no-repeat;
-      text-decoration: none;
-      color: inherit;
-      transition: .25s;
-      will-change: background-position;
-    }
-
-    a:not(.btn, :has(*:not(span))):hover {
-      color: var(--m3-scheme-on-primary);
-      background-position: 0 100%;
-    }
-
-    pre {
-      background: var(--m3-scheme-surface-variant);
-      padding: .75rem;
-      border-radius: var(--m3-util-rounding-medium);
-    }
-
-    pre>code {
-      padding: 0;
-      font-size: 1rem;
-    }
-
     .sr-only {
       position: absolute;
       width: 1px;
