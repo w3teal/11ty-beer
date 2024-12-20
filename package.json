@@ -1,14 +1,27 @@
 {
-  "name": "24ty",
+  "name": "gmx-css",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An 11ty blog template with Material Design, PWA and minified files that simply works.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy --pathprefix=11ty-gmx"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LIGMATV/11ty-gmx.git"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "material-design",
+    "pwa"
+  ],
+  "author": "LIGMATV",
+  "license": "MIT",
+  "homepage": "https://github.com/LIGMATV/11ty-gmx#readme",
+  "bugs": {
+    "url": "https://github.com/LIGMATV/11ty-gmx/issues"
+  },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "luxon": "^3.5.0",
