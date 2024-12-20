@@ -1,0 +1,12 @@
+<menu>
+    {% for item in site.menuItems %}
+    <li {% if page.url == item.url %} class="active" {% endif %}>
+        <a href="{{ item.url }}">
+            <i>
+                <iconify-icon icon="{{ item.icon }}"></iconify-icon>
+            </i>
+            <span>{{ item.title }}</span>
+        </a>
+    </li>
+    {% endfor %}
+</menu>

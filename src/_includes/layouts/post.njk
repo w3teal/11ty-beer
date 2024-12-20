@@ -1,0 +1,21 @@
+---
+layout: layouts/default.njk
+title: My Rad Blog
+description: This website is just for demoing a template powered by 11ty.
+date: 2016-01-01
+---
+
+<section class="info">
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    <p>{{ date | date }} - by {{ site.author }} </p>
+    <nav class="gap-sm">
+        {% for tag in tags %}
+          <a class="btn chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
+        {% endfor %}
+    </nav>
+</section>
+
+<section class="content">
+    {{ content | safe }}
+</section>

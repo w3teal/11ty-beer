@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+
+<main>
+  <aside>
+    {% include "components/menu.njk" %}
+  </aside>
+  <article>
+    {{ content | safe }}
+    {% include "components/footer.njk" %}
+  </article>
+</main>

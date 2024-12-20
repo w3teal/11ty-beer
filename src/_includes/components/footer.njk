@@ -1,0 +1,32 @@
+<hr>
+<footer>
+    <br>
+  <nav>
+    <div>
+        <div class="display-lg"><a href="{{ site.url }}">{{ site.title }}</a></div>
+        <p class="text-sm">{{ site.description }}</p>
+    </div>
+    <div class="flex-max"></div>
+    <p>
+      {% if site.github != "" %}
+      <a class="btn icon text" href={{ site.github }}>
+        <i>
+          <iconify-icon icon="mdi:github"></iconify-icon>
+        </i>
+        <span class="sr-only">GitHub</span>
+      </a>
+      {% endif %}
+
+      {% if site.devTo != "" %}
+      <a class="btn icon text" href={{ site.devTo }}>
+        <i>
+          <iconify-icon icon="mdi:dev-to"></iconify-icon>
+        </i>
+        <span class="sr-only">DEV.to</span>
+      </a>
+      {% endif %}
+
+    </p>
+  </nav>
+</footer>
+<br>

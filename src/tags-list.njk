@@ -1,0 +1,17 @@
+---
+layout: layouts/default.njk
+permalink: /tags/index.html
+title: "All tags"
+---
+
+<section class="header">
+    <h1>{{ title }}</h1>
+</section>
+
+<section class="tags">
+    <nav class="gap-sm">
+        {% for tag in collections.tagsList %}
+          <a class="btn chip" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+        {% endfor %}
+      </nav>
+</section>

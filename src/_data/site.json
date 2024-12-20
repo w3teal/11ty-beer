@@ -1,0 +1,15 @@
+{
+    "theme": "blue",
+    "author": "LIGMATV",
+    "url": "https://www.11ty.dev/",
+    "title": "11ty GMX",
+    "shortTitle": "11ty",
+    "description": "Welcome to my blog, powered by 11ty & GMX.css.",
+    "github": "https://github.com/LIGMATV",
+    "devTo": "https://dev.to/ligmatv",
+    "menuItems": [
+        { "title": "Home", "url": "/", "icon": "mdi:home-variant-outline" },
+        { "title": "Posts", "url": "/posts/", "icon": "mdi:file-star-four-points-outline" },
+        { "title": "Tags", "url": "/tags/", "icon": "mdi:tag-multiple-outline" }
+    ]
+}

@@ -1,0 +1,21 @@
+<script>
+    window.addEventListener('load', () => {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then((registrations) => {
+                Promise.all(
+                    registrations.map((registration) => registration.unregister())
+                ).then(() => {
+                    navigator.serviceWorker.register('/sw.js').then((registration) => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    }).catch((error) => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+                }).catch((error) => {
+                    console.log('Failed to unregister service workers:', error);
+                });
+            }).catch((error) => {
+                console.log('Failed to get service worker registrations:', error);
+            });
+        }
+    });
+</script>
