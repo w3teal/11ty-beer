@@ -5,7 +5,8 @@ pagination:
   size: 1
   alias: tag
 permalink: /tags/{{ tag | slug }}/index.html
-title: "Tag: {{ tag }}"
+eleventyComputed:
+  title: "#{{ tag }}"
 ---
 
 <section class="header">
