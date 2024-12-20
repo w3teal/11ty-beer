@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies & build
         run: |
           npm install
-          npx @11ty/eleventy
+          npm run build
       - uses: actions/upload-pages-artifact@v2
 
   deploy:
