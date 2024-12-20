@@ -9,7 +9,6 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
-  // Markdown-it dengan custom heading renderer
   const md = markdownIt({ html: true }).use((md) => {
     const defaultRender = md.renderer.rules.heading_open || function(tokens, idx) {
       return md.renderer.renderToken(tokens, idx);
@@ -19,7 +18,6 @@ module.exports = function(eleventyConfig) {
       const content = tokens[idx + 1].content;
       const slug = slugify(content);
       tokens[idx].attrSet("id", slug);
-      // Menambahkan <a> dengan aria-label
       return `<${tokens[idx].tag} id="${slug}"><a class="header-anchor" href="#${slug}" aria-label="Link to ${content}"></a>`;
     };
 
@@ -28,7 +26,6 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setLibrary("md", md);
 
-  // Filter format tanggal
   eleventyConfig.addFilter("date", (dateObj) => {
     const year = dateObj.getFullYear();
     const month = String(dateObj.getMonth() + 1).padStart(2, "0");
@@ -36,17 +33,14 @@ module.exports = function(eleventyConfig) {
     return `${year}-${month}-${day}`;
   });
 
-  // Koleksi posts
   eleventyConfig.addCollection("posts", (collectionApi) => 
     collectionApi.getFilteredByGlob("src/posts/*.md")
   );
 
-  // Filter koleksi berdasarkan tag
   eleventyConfig.addFilter("filterByTag", (posts, tag) => 
     posts.filter(post => post.data.tags?.includes(tag))
   );
 
-  // Koleksi daftar tag
   eleventyConfig.addCollection("tagsList", (collectionApi) => {
     const tagsSet = new Set();
     collectionApi.getAll().forEach(item => {
@@ -59,6 +53,12 @@ module.exports = function(eleventyConfig) {
     const [width, height] = size.split('x');
     return `<img class="block" src="${filename}" alt="${alt}" width="${width}" height="${height}" />`;
   });  
+
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/gmx.css/gmx.css": "/modules/gmx.css",
+    "node_modules/gmx.css/theme.css": "/modules/theme.css",
+    "node_modules/iconify-icon/dist/iconify-icon.min.js": "/modules/iconify-icon.min.js"
+  });
 
   eleventyConfig.addPassthroughCopy({ "src/public": "/" });
 
