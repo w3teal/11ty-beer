@@ -4,7 +4,7 @@
   "description": "An 11ty blog template with Material Design, PWA and minified files that simply works.",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy --pathprefix=11ty-gmx"
+    "build": "npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
