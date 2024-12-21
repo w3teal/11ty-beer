@@ -7,26 +7,20 @@
         <p class="text-sm">{{ site.description }}</p>
     </div>
     <div class="flex-max"></div>
-    <p>
-      {% if site.github != "" %}
-      <a class="btn icon text" href={{ site.github }}>
-        <i>
-          <iconify-icon icon="mdi:github"></iconify-icon>
-        </i>
-        <span class="sr-only">GitHub</span>
-      </a>
-      {% endif %}
 
-      {% if site.devTo != "" %}
-      <a class="btn icon text" href={{ site.devTo }}>
-        <i>
-          <iconify-icon icon="mdi:dev-to"></iconify-icon>
-        </i>
-        <span class="sr-only">DEV.to</span>
-      </a>
-      {% endif %}
+    <div>
 
-    </p>
+      {% for item in site.socialItems %}
+      <a class="btn icon text" href="{{ item.url }}">
+        <i>
+          <iconify-icon icon="{{ item.icon }}"></iconify-icon>
+        </i>
+        <span class="sr-only">{{ item.title }}</span>
+      </a>
+      {% endfor %}
+
+    </div>
+
   </nav>
 </footer>
 <br>

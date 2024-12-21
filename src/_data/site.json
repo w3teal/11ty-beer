@@ -5,8 +5,11 @@
     "title": "11ty GMX",
     "shortTitle": "11ty",
     "description": "Welcome to my blog, powered by 11ty & GMX.css.",
-    "github": "https://github.com/LIGMATV/11ty-gmx",
-    "devTo": "https://dev.to/ligmatv",
+    "keywords": ["eleventy", "material", "pwa"],
+    "socialItems": [
+        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-gmx", "icon": "mdi:github" },
+        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "mdi:dev-to" }
+    ],
     "menuItems": [
         { "title": "Home", "url": "/", "icon": "mdi:home-variant-outline" },
         { "title": "Posts", "url": "/posts/", "icon": "mdi:file-star-four-points-outline" },

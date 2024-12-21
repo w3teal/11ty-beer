@@ -9,10 +9,11 @@ description: All the tags i used for the posts in this website.
     <h1>{{ title }}</h1>
 </section>
 
-<section class="tags">
+<section class="tags scroll">
     <nav class="gap-sm">
         {% for tag in collections.tagsList %}
           <a class="btn chip" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
         {% endfor %}
       </nav>
+      <br>
 </section>
