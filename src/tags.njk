@@ -15,11 +15,11 @@ eleventyComputed:
 </section>
 
 <section class="posts">
-    <div class="grid all-s6">
+    <div class="grid all-s12 all-m6">
         {% for post in collections.posts | filterByTag(tag) %}
             <div class="container">
                <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-               <p>{{ post.date | date }}</p>
+               <p>{{ post.date | date }} - by {{ site.author }}</p>
                <p class="text-sm">{{ post.data.description }}</p>
                <a class="btn tonal" href="{{ post.url }}">
                    <i><iconify-icon icon="mdi:open-in-new"></iconify-icon></i>

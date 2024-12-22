@@ -15,18 +15,19 @@ description: All my posts i write in this website.
                <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
                <p>{{ post.date | date }} - by {{ site.author }}</p>
                <p class="text-sm">{{ post.data.description }}</p>
-               <nav>
-                   <nav class="gap-sm scroll" style="max-width: 55%;">
+               <div class="grid">
+                   <div class="s12 m12 l8 scroll">
                     {% for tag in post.data.tags %}
                        <a class="btn chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
                     {% endfor %}
-                   </nav>
-                   <div class="flex-max"></div>
-                   <a class="btn tonal" href="{{ post.url }}">
-                       <i><iconify-icon icon="mdi:open-in-new"></iconify-icon></i>
-                       Read this post
-                   </a>
-               </nav>            
+                   </div>
+                   <div class="s12 m12 l4 text-right">
+                    <a class="btn tonal" href="{{ post.url }}">
+                        <i><iconify-icon icon="mdi:open-in-new"></iconify-icon></i>
+                        Read this post
+                    </a>
+                   </div>
+               </div>        
             </div>
         {% endfor %}
     </div>
