@@ -17,9 +17,9 @@ Firstly, you can open the `_data/site.json` file, you will find some configurati
 {
     "theme": "blue",
     "author": "LIGMATV",
-    "url": "https://www.11ty.dev/",
-    "title": "11ty GMX",
-    "shortTitle": "11ty",
+    "url": "https://11ty-gmx.vercel.app",
+    "title": "11ty GMX Web",
+    "shortTitle": "11ty GMX",
     "description": "Welcome to my blog, powered by 11ty & GMX.css.",
     "keywords": ["eleventy", "material", "pwa"],
     "socialItems": [
@@ -55,17 +55,17 @@ Example of the usage: `<meta name="author" content="LIGMATV">`
 
 ### Url
 
-Url to your website. Can be also the social media you use mostly.
+Url to your (this) website. Used in `sitemap.xml` and `robots.txt` for search engine optimization.
 ```
-    "url": "https://www.11ty.dev/",
+    "url": "https://11ty-gmx.vercel.app",
 ```
 
 ### Title & Short title
 
 The title or name for your website.
 ```
-    "title": "11ty GMX",
-    "shortTitle": "11ty",
+    "title": "11ty GMX Web",
+    "shortTitle": "11ty GMX",
 ```
 
 ### Description

@@ -56,6 +56,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "node_modules/gmx.css/dist/gmx.min.css": "/modules/gmx.min.css",
+    "node_modules/gmx.css/dist/theme.min.css": "/modules/theme.min.css",
     "node_modules/iconify-icon/dist/iconify-icon.min.js": "/modules/iconify-icon.min.js"
   });
 

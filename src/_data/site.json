@@ -1,9 +1,9 @@
 {
     "theme": "blue",
     "author": "LIGMATV",
-    "url": "https://www.11ty.dev/",
-    "title": "11ty GMX",
-    "shortTitle": "11ty",
+    "url": "https://11ty-gmx.vercel.app",
+    "title": "11ty GMX Web",
+    "shortTitle": "11ty GMX",
     "description": "Welcome to my blog, powered by 11ty & GMX.css.",
     "keywords": ["eleventy", "material", "pwa"],
     "socialItems": [
