@@ -2,17 +2,17 @@
     "theme": "blue",
     "author": "LIGMATV",
     "url": "https://11ty-gmx.vercel.app",
-    "title": "11ty GMX Web",
-    "shortTitle": "11ty GMX",
-    "description": "Welcome to my blog, powered by 11ty & GMX.css.",
+    "title": "11ty Beer Web",
+    "shortTitle": "11ty Beer",
+    "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
     "keywords": ["eleventy", "material", "pwa"],
     "socialItems": [
-        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-gmx", "icon": "mdi:github" },
-        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "mdi:dev-to" }
+        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-gmx", "icon": "frame_source" },
+        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "web" }
     ],
     "menuItems": [
-        { "title": "Home", "url": "/", "icon": "mdi:home-variant-outline" },
-        { "title": "Posts", "url": "/posts/", "icon": "mdi:file-star-four-points-outline" },
-        { "title": "Tags", "url": "/tags/", "icon": "mdi:tag-multiple-outline" }
+        { "title": "Home", "url": "/", "icon": "home" },
+        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "pages" },
+        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "sell" }
     ]
 }

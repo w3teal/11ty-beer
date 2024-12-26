@@ -6,22 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ description or site.description }}">
   <meta name="author" content="{{ site.author }}">
-  <meta name="keywords" content="{% set keywords = tags or site.keywords %}{% for tag in keywords %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}">
+  <meta name="keywords"
+    content="{% set keywords = tags or site.keywords %}{% for tag in keywords %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}">
   <meta name="generator" content="Eleventy v3.0.0">
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/ios/32.png">
   <link rel="apple-touch-icon" href="/favicon/ios/64.png">
   <title>{{ title }} — {{ site.title }}</title>
-  <link rel="stylesheet" href="/modules/gmx.min.css">
-  <link rel="stylesheet" href="/modules/theme.min.css">
-  <script src="/modules/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="/modules/beer.min.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/beer.min.js"></script>
   <link rel="manifest" href="/manifest.json">
   <style>
-    /* GMX.css bug */
-    .text-right {
-      text-align: right;
+    img {
+      max-width: 100%;
     }
-    /**/
+
+    img[width][height] {
+      height: auto;
+    }
 
     .sr-only {
       position: absolute;
@@ -36,7 +38,7 @@
     }
 
     *:has(>.header-anchor) {
-      margin-top: 2.25rem;
+      margin-block-start: 2.25rem !important;
       position: relative;
     }
 
@@ -45,14 +47,26 @@
       visibility: visible;
     }
 
+    *:has(>.header-anchor):target .header-anchor {
+      opacity: 1;
+      visibility: visible;
+      color: var(--on-primary-container);
+    }
+
     .header-anchor {
       opacity: 0;
       transition: .1s;
-      position: absolute;
-      left: 0;
-      margin-left: -.75em;
-      background-position: 0 0%;
+      margin-left: 1rem;
       visibility: hidden;
+    }
+
+    .header-anchor .tooltip {
+      inset: auto auto 0 50%;
+      transform: translate(-50%, 100%) scale(.9);
+    }
+
+    .header-anchor:hover .tooltip {
+      transform: translate(-50%, 100%) scale(1);
     }
 
     .header-anchor::before {
@@ -61,7 +75,7 @@
   </style>
 </head>
 
-<body class="{{ site.theme }}">
+<body>
   {{ content | safe }}
 </body>
 

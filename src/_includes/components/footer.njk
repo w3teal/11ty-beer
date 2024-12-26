@@ -1,27 +1,37 @@
-<hr>
-<footer>
+<div class="large-space"></div>
+<footer class="padding">
 
-  <div class="grid">
-
-    <div class="s12 m6">
-        <div class="display-lg"><a href="{{ site.url }}">{{ site.title }}</a></div>
+    <nav class="row m l">
+      <div>
+        <h3><a href="{{ site.url }}">{{ site.title }}</a></h3>
         <p class="text-sm">{{ site.description }}</p>
-    </div>
+      </div> 
+      <div class="max"></div>
+      <nav>
+        {% for item in site.socialItems %}
+        <a class="button circle transparent" href="{{ item.url }}">
+          <i>{{ item.icon }}</i>
+          <div class="tooltip">{{ item.title }}</div>
+        </a>
+        {% endfor %}
+      </nav>
+    </nav>
 
-    <div class="s12 m6 text-right">
-      <br>
-
-      {% for item in site.socialItems %}
-      <a class="btn icon text" href="{{ item.url }}">
-        <i>
-          <iconify-icon icon="{{ item.icon }}"></iconify-icon>
-        </i>
-        <span class="sr-only">{{ item.title }}</span>
-      </a>
-      {% endfor %}
-
+    <div class="s">
+      <div>
+        <h3><a href="{{ site.url }}">{{ site.title }}</a></h3>
+        <p class="text-sm">{{ site.description }}</p>
+      </div>
+      <div class="max"></div>
+      <nav>
+        {% for item in site.socialItems %}
+        <a class="button circle transparent" href="{{ item.url }}">
+          <i>{{ item.icon }}</i>
+          <div class="tooltip">{{ item.title }}</div>
+        </a>
+        {% endfor %}
+      </nav>
     </div>
 
   </div>
 </footer>
-<br>

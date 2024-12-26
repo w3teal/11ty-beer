@@ -5,15 +5,18 @@ title: "All tags"
 description: All the tags i used for the posts in this website.
 ---
 
-<section class="header">
-    <h1>{{ title }}</h1>
-</section>
+<div class="large-space"></div>
+<h1>{{ title }}</h1>
+<div class="space"></div>
 
-<section class="tags scroll">
-    <nav class="gap-sm">
-        {% for tag in collections.tagsList %}
-          <a class="btn chip" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
-        {% endfor %}
-      </nav>
-      <br>
-</section>
+<article class="no-padding" style="overflow: hidden;">
+  {% for tag in collections.tagsList %}
+    <a class="row wave padding" href="/tags/{{ tag | slug }}/">
+      <i>tag</i>
+      <div class="max">
+        <h6 class="small">{{ tag }}</h6>
+      </div>
+    </a>
+    <hr>
+  {% endfor %}
+</article>

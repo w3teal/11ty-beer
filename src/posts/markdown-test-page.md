@@ -8,14 +8,14 @@ tags:
  - test
 ---
 
-* [Headings](#Headings)
-* [Paragraphs](#Paragraphs)
-* [Blockquotes](#Blockquotes)
-* [Lists](#Lists)
-* [Horizontal rule](#Horizontal)
-* [Table](#Table)
-* [Code](#Code)
-* [Inline elements](#Inline)
+* [Headings](#headings)
+* [Paragraphs](#paragraphs)
+* [Blockquotes](#blockquotes)
+* [Lists](#lists)
+* [Horizontal rule](#horizontal-rule)
+* [Table](#table)
+* [Code](#code)
+* [Inline elements](#inline-elements)
 
 ***
 

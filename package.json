@@ -1,5 +1,5 @@
 {
-  "name": "gmx-css",
+  "name": "11ty-beer",
   "version": "1.0.0",
   "description": "An 11ty blog template with Material Design, PWA and minified files that simply works.",
   "scripts": {
@@ -24,10 +24,10 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "gmx.css": "^0.0.20",
-    "iconify-icon": "^2.2.0",
+    "beercss": "^3.8.0",
     "luxon": "^3.5.0",
-    "markdown-it": "^14.1.0"
+    "markdown-it": "^14.1.0",
+    "material-dynamic-colors": "^1.1.2"
   },
   "devDependencies": {
     "@sherby/eleventy-plugin-files-minifier": "^1.1.1"

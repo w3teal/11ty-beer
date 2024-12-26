@@ -1,0 +1,27 @@
+<dialog id="dialog-tags" class="left no-padding">
+    <nav class="drawer">
+        <header>
+            <nav>
+                <div class="row max truncate">
+                    <img class="circle" src="/favicon/ios/64.png" alt="favicon" width="48" height="48">
+                    <h6 class="max">All tags</h6>
+                </div>
+                <div class="row">
+                    <a class="button circle large border" href="/tags/" target="_blank">
+                        <i>open_in_new</i>
+                        <div class="tooltip bottom">Open in New Tab</div>
+                    </a>
+                    <button class="transparent circle large" data-ui="#dialog-tags">
+                        <i>close</i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        {% for tag in collections.tagsList %}
+        <a href="/tags/{{ tag | slug }}/" {% if page.url == '/tags/' ~ (tag | slug) ~ '/' %} class="active"{% endif %}>
+            <i>tag</i>
+            {{ tag }}
+        </a>        
+        {% endfor %}
+      </nav>
+</dialog>

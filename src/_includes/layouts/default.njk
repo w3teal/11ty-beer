@@ -2,12 +2,10 @@
 layout: layouts/base.njk
 ---
 
-<main>
-  <aside>
-    {% include "components/menu.njk" %}
-  </aside>
-  <article>
-    {{ content | safe }}
-    {% include "components/footer.njk" %}
-  </article>
+{% include "components/menu.njk" %}
+<main class="responsive">
+  {{ content | safe }}
 </main>
+{% include "components/dialog-posts.njk" %}
+{% include "components/dialog-tags.njk" %}
+{% include "components/footer.njk" %}

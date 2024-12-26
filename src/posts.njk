@@ -4,32 +4,28 @@ title: "My posts"
 description: All my posts i write in this website.
 ---
 
-<section class="header">
-    <h1>{{ title }}</h1>
-</section>
+<div class="large-space"></div>
+<h1>{{ title }}</h1>
+<div class="space"></div>
 
-<section class="posts">
-    <div class="grid all-s12 all-m6">
-        {% for post in collections.posts | reverse %}
-            <div class="container">
-               <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-               <p>{{ post.date | date }} - by {{ site.author }}</p>
-               <p class="text-sm">{{ post.data.description }}</p>
-               <div class="grid">
-                   <div class="s12 m12 l8 scroll">
-                    {% for tag in post.data.tags %}
-                       <a class="btn chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
-                    {% endfor %}
-                   </div>
-                   <div class="s12 m12 l4 text-right">
-                    <a class="btn tonal" href="{{ post.url }}">
-                        <i><iconify-icon icon="mdi:open-in-new"></iconify-icon></i>
-                        Read this post
-                    </a>
-                   </div>
-               </div>        
-            </div>
-        {% endfor %}
-    </div>
-</section>
- 
+<div class="grid">
+    {% for post in collections.posts | reverse %}
+    <article class="s12 m12 l6">
+        <h2><a class="link" href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <p>{{ post.date | date }} - by {{ site.author }}</p>
+        <p class="text-sm">{{ post.data.description }}</p>
+        <nav class="wrap">
+            {% for tag in post.data.tags %}
+            <a class="chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
+            {% endfor %}
+        </nav>
+        <nav>
+            <div class="max"></div>
+            <a class="button tonal no-margin" href="{{ post.url }}">
+                <i>book_5</i>
+                Read this post
+            </a>
+        </nav>
+    </article>
+    {% endfor %}
+</div>

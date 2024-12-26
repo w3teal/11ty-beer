@@ -10,21 +10,26 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
   const md = markdownIt({ html: true }).use((md) => {
-    const defaultRender = md.renderer.rules.heading_open || function(tokens, idx) {
+    const defaultRender = md.renderer.rules.heading_close || function (tokens, idx) {
       return md.renderer.renderToken(tokens, idx);
     };
-
+  
     md.renderer.rules.heading_open = (tokens, idx) => {
-      const content = tokens[idx + 1].content;
+      const content = tokens[idx + 1] && tokens[idx + 1].content ? tokens[idx + 1].content : "heading";
       const slug = slugify(content);
       tokens[idx].attrSet("id", slug);
-      return `<${tokens[idx].tag} id="${slug}"><a class="header-anchor" href="#${slug}" aria-label="Link to ${content}"></a>`;
+      return `<${tokens[idx].tag} id="${slug}">`;
     };
-
-    md.renderer.rules.heading_close = defaultRender;
+  
+    md.renderer.rules.heading_close = (tokens, idx) => {
+      const content = tokens[idx - 1] && tokens[idx - 1].content ? tokens[idx - 1].content : "heading";
+      const slug = slugify(content);
+      return `<a href="#${slug}" class="header-anchor" aria-label="Permalink to ${content}"><div class="tooltip">Permanent link</div></a></${tokens[idx].tag}>`;
+    };
   });
-
+  
   eleventyConfig.setLibrary("md", md);
+  
 
   eleventyConfig.addFilter("date", (dateObj) => {
     const year = dateObj.getFullYear();
@@ -51,13 +56,12 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addLiquidShortcode('image', (filename, alt, size) => {
     const [width, height] = size.split('x');
-    return `<img class="block" src="${filename}" alt="${alt}" width="${width}" height="${height}" />`;
+    return `<img src="${filename}" alt="${alt}" width="${width}" height="${height}" />`;
   });  
 
   eleventyConfig.addPassthroughCopy({
-    "node_modules/gmx.css/dist/gmx.min.css": "/modules/gmx.min.css",
-    "node_modules/gmx.css/dist/theme.min.css": "/modules/theme.min.css",
-    "node_modules/iconify-icon/dist/iconify-icon.min.js": "/modules/iconify-icon.min.js"
+    "node_modules/beercss/dist/cdn": "/modules/",
+    "node_modules/material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js": "/modules/material-dynamic-colors.min.js"
   });
 
   eleventyConfig.addPassthroughCopy({ "src/public": "/" });
