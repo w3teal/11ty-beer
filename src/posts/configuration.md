@@ -15,32 +15,32 @@ Here's some customization to make your site more yours.
 Firstly, you can open the `_data/site.json` file, you will find some configuration here.
 ```
 {
-    "theme": "blue",
+    "title": "11ty Beer Web",
+    "shortTitle": "11ty Beer",
     "author": "LIGMATV",
     "url": "https://11ty-gmx.vercel.app",
-    "title": "11ty GMX Web",
-    "shortTitle": "11ty GMX",
-    "description": "Welcome to my blog, powered by 11ty & GMX.css.",
+    "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
+    "ghRepo": "LIGMATV/11ty-beer",
     "keywords": ["eleventy", "material", "pwa"],
     "socialItems": [
-        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-gmx", "icon": "mdi:github" },
-        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "mdi:dev-to" }
+        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
+        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "devdotto" }
     ],
     "menuItems": [
-        { "title": "Home", "url": "/", "icon": "mdi:home-variant-outline" },
-        { "title": "Posts", "url": "/posts/", "icon": "mdi:file-star-four-points-outline" },
-        { "title": "Tags", "url": "/tags/", "icon": "mdi:tag-multiple-outline" }
+        { "title": "Home", "url": "/", "icon": "home" },
+        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "pages" },
+        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "sell" },
+        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette" }
     ]
 }
 ```
 
-## Themes
+## Title & Short title
 
-You can select your favorite theme here by changes the `theme` string. You can also demoing the color in the [GMX.css website](https://ligmatv.is-a.dev/gmx.css/).  
-The themes you can use is: `red`, `pink`, `purple`, `indigo`, `blue`, `cyan`, `teal`, `green`, `lime`, `yellow`, `amber`, `orange` and `monochrome`.
-
+The title or name for your website. Short title is used for your PWA's app name.
 ```
-    "theme": "indigo",
+    "title": "11ty GMX Web",
+    "shortTitle": "11ty GMX",
 ```
 
 ## Bio
@@ -60,14 +60,6 @@ Url to your (this) website. Used in `sitemap.xml` and `robots.txt` for search en
     "url": "https://11ty-gmx.vercel.app",
 ```
 
-### Title & Short title
-
-The title or name for your website.
-```
-    "title": "11ty GMX Web",
-    "shortTitle": "11ty GMX",
-```
-
 ### Description
 
 The default description if the `description` string in the frontmatter is not filled.  
@@ -76,7 +68,15 @@ Example of the usage: `<meta name="description" content="Welcome to my blog, pow
     "description": "Welcome to my blog, powered by 11ty & GMX.css.",
 ```
 
-### Keywords
+## GitHub Repository
+
+The github repository which used for hosting the website code.  
+Example of the usage: The "View source of this page" and "Edit this page" button in posts.
+```
+    "ghRepo": "LIGMATV/11ty-beer",
+```
+
+## Keywords
 
 The default keywords if the `tags` array in the frontmatter is not filled.  
 Example of the usage: `<meta name="keywords" content="eleventy, material, pwa">`
@@ -89,12 +89,11 @@ Example of the usage: `<meta name="keywords" content="eleventy, material, pwa">`
 Here, you can add multiple arrays as you want. There's a 3 strings you need to fill.
 1. `title`: The title/name of the social media.
 2. `url`: The social media URL.
-3. `icon`: The icon for the website. You can find the code names in [Iconify Icon Sets](https://icon-sets.iconify.design/). From [MDI](https://icon-sets.iconify.design/mdi/) or [Simple Icons](https://icon-sets.iconify.design/simple-icons/).  
-  Example of icon code name: [mdi:github](https://icon-sets.iconify.design/mdi/?icon-filter=github)
+3. `icon`: The logo for the website. You can find the logo names in [Simple Icons](https://simpleicons.org/).  
 ```
     "socialItems": [
-        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-gmx", "icon": "mdi:github" },
-        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "mdi:dev-to" }
+        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
+        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "devdotto" }
     ],
 ```
 
@@ -103,8 +102,7 @@ Here, you can add multiple arrays as you want. There's a 3 strings you need to f
 Same as the social items, you can add multiple arrays as you want. There's a 3 strings you need to fill.
 1. `title`: The title of the page.
 2. `url`: The link to the page.
-3. `icon`: The icon that presenting the page. You can find the code names in [Iconify Icon Sets](https://icon-sets.iconify.design/). From [MDI](https://icon-sets.iconify.design/mdi/).  
-  Example of icon code name: [mdi:home-variant-outline](https://icon-sets.iconify.design/mdi/?icon-filter=home-variant)
+3. `icon`: The icon that presenting the page. You can find the icon names in [Google Fonts](https://fonts.google.com/icons).
 ```
     "menuItems": [
         { "title": "Home", "url": "/", "icon": "mdi:home-variant-outline" },

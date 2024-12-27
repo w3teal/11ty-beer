@@ -27,7 +27,8 @@
     "beercss": "^3.8.0",
     "luxon": "^3.5.0",
     "markdown-it": "^14.1.0",
-    "material-dynamic-colors": "^1.1.2"
+    "material-dynamic-colors": "^1.1.2",
+    "simple-icons-font": "^14.0.0"
   },
   "devDependencies": {
     "@sherby/eleventy-plugin-files-minifier": "^1.1.1"

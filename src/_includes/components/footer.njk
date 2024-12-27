@@ -1,37 +1,17 @@
 <div class="large-space"></div>
-<footer class="padding">
+<footer class="grid padding">
 
-    <nav class="row m l">
-      <div>
-        <h3><a href="{{ site.url }}">{{ site.title }}</a></h3>
-        <p class="text-sm">{{ site.description }}</p>
-      </div> 
-      <div class="max"></div>
-      <nav>
-        {% for item in site.socialItems %}
-        <a class="button circle transparent" href="{{ item.url }}">
-          <i>{{ item.icon }}</i>
-          <div class="tooltip">{{ item.title }}</div>
-        </a>
-        {% endfor %}
-      </nav>
-    </nav>
-
-    <div class="s">
-      <div>
-        <h3><a href="{{ site.url }}">{{ site.title }}</a></h3>
-        <p class="text-sm">{{ site.description }}</p>
-      </div>
-      <div class="max"></div>
-      <nav>
-        {% for item in site.socialItems %}
-        <a class="button circle transparent" href="{{ item.url }}">
-          <i>{{ item.icon }}</i>
-          <div class="tooltip">{{ item.title }}</div>
-        </a>
-        {% endfor %}
-      </nav>
-    </div>
-
+  <div class="s12 m8 l8">
+    <h3><a href="{{ site.url }}">{{ site.title }}</a></h3>
+    <p class="text-sm">{{ site.description }}</p>
   </div>
+  <div class="s12 m4 l4 row right-align">
+    {% for item in site.socialItems %}
+    <a class="button circle transparent" href="{{ item.url }}" aria-label="{{ item.title }}">
+      <i class="si si-{{ item.icon }}"></i>
+      <div class="tooltip">{{ item.title }}</div>
+    </a>
+    {% endfor %}
+  </div>
+
 </footer>

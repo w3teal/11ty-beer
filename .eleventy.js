@@ -60,8 +60,9 @@ module.exports = function(eleventyConfig) {
   });  
 
   eleventyConfig.addPassthroughCopy({
-    "node_modules/beercss/dist/cdn": "/modules/",
-    "node_modules/material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js": "/modules/material-dynamic-colors.min.js"
+    "node_modules/beercss/dist/cdn": "/modules/beercss",
+    "node_modules/material-dynamic-colors/dist/cdn": "/modules/material-dynamic-colors",
+    "node_modules/simple-icons-font/font": "/modules/simple-icons-font"
   });
 
   eleventyConfig.addPassthroughCopy({ "src/public": "/" });

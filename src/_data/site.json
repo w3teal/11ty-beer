@@ -1,18 +1,19 @@
 {
-    "theme": "blue",
-    "author": "LIGMATV",
-    "url": "https://11ty-gmx.vercel.app",
     "title": "11ty Beer Web",
     "shortTitle": "11ty Beer",
+    "author": "LIGMATV",
+    "url": "https://11ty-gmx.vercel.app",
     "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
+    "ghRepo": "LIGMATV/11ty-beer",
     "keywords": ["eleventy", "material", "pwa"],
     "socialItems": [
-        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-gmx", "icon": "frame_source" },
-        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "web" }
+        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
+        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "devdotto" }
     ],
     "menuItems": [
         { "title": "Home", "url": "/", "icon": "home" },
         { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "pages" },
-        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "sell" }
+        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "sell" },
+        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette" }
     ]
 }

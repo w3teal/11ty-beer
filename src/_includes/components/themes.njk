@@ -1,0 +1,51 @@
+<dialog class="small left" id="dialog-themes">
+    <header class="fixed">
+        <nav>
+            <div class="max">
+                <h5>Themes</h5>
+            </div>
+            <button class="circle border large" onclick="mode()">
+                <i class="dark large">dark_mode</i>
+                <i class="light large">light_mode</i>
+                <div class="tooltip bottom">Toggle theme</div>
+            </button>
+            <button class="circle transparent" data-ui="#dialog-themes"><i>close</i></button>
+        </nav>
+    </header>
+    <div>
+        <nav class="wrap">
+            <button class="circle small red" onclick="theme('#f44336')"></button>
+            <button class="circle small pink" onclick="theme('#e91e63')"></button>
+            <button class="circle small purple" onclick="theme('#9c27b0')"></button>
+            <button class="circle small deep-purple" onclick="theme('#9c27b0')"></button>
+            <button class="circle small indigo" onclick="theme('#3f51b5')"></button>
+            <button class="circle small blue" onclick="theme('#2196f3')"></button>
+            <button class="circle small light-blue" onclick="theme('#03a9f4')"></button>
+            <button class="circle small cyan" onclick="theme('#00bcd4')"></button>
+            <button class="circle small teal" onclick="theme('#009688')"></button>
+            <button class="circle small green" onclick="theme('#4caf50')"></button>
+            <button class="circle small light-green" onclick="theme('#8bc34a')"></button>
+            <button class="circle small lime" onclick="theme('#cddc39')"></button>
+            <button class="circle small yellow" onclick="theme('#ffeb3b')"></button>
+            <button class="circle small amber" onclick="theme('#ffc107')"></button>
+            <button class="circle small orange" onclick="theme('#ff9800')"></button>
+            <button class="circle small deep-orange" onclick="theme('#ff5722')"></button>
+            <button class="circle small brown" onclick="theme('#795548')"></button>
+            <button class="circle small grey" onclick="theme('#9e9e9e')"></button>
+            <button class="circle small blue-grey" onclick="theme('#607d8b')"></button>
+            <button class="circle small black" onclick="theme('#000')"></button>
+            <button class="circle small white" onclick="theme('#fff')"></button>
+        </nav>
+    </div>
+</dialog>
+
+<script>
+    const theme = async (from) => {
+        await ui("theme", from);
+    };
+
+    const mode = () => {
+        let newMode = ui("mode") == "dark" ? "light" : "dark";
+        ui("mode", newMode);
+    }
+</script>

@@ -3,7 +3,7 @@
         <img class="circle" src="/favicon/ios/64.png" alt="favicon" width="48" height="48">
     </header>
     {% for item in site.menuItems %}
-    <a {% if item.url %}href="{{ item.url }}"{% endif %} {% if page.url == item.url %} class="active" {% endif %}>
+    <a {% if item.url %}href="{{ item.url }}"{% endif %}>
         <i>{{ item.icon }}</i>
         <span>{{ item.title }}</span>
     </a>
@@ -12,7 +12,7 @@
 
 <nav class="s bottom">
     {% for item in site.menuItems %}
-    <a {% if item.url %}href="{{ item.url }}"{% endif %} {% if item.dataUI %}data-ui="{{ item.dataUI }}"{% endif %} {% if page.url == item.url %} class="target" {% endif %}>
+    <a {% if item.url %}href="{{ item.url }}"{% endif %} {% if item.dataUI %}data-ui="{{ item.dataUI }}"{% endif %}>
         <i>{{ item.icon }}</i>
         <span>{{ item.title }}</span>
     </a>

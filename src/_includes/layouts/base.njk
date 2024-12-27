@@ -13,8 +13,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/ios/32.png">
   <link rel="apple-touch-icon" href="/favicon/ios/64.png">
   <title>{{ title }} — {{ site.title }}</title>
-  <link rel="stylesheet" href="/modules/beer.min.css">
-  <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/beer.min.js"></script>
+  <link rel="stylesheet" href="/modules/beercss/beer.min.css">
+  <script type="module" src="/modules/beercss/beer.min.js"></script>
+  <script type="module" src="/modules/material-dynamic-colors/material-dynamic-colors.min.js"></script>
+  <link rel="stylesheet" href="/modules/simple-icons-font/simple-icons.min.css">
   <link rel="manifest" href="/manifest.json">
   <style>
     img {
@@ -23,6 +25,52 @@
 
     img[width][height] {
       height: auto;
+    }
+
+    body.light i.light,
+    body.dark i.dark {
+      display: none;
+    }
+
+    i.si {
+      ---size: 1.35rem;
+    }
+
+    .post h1 {
+      font-size: 3.0625rem
+    }
+
+    .post h2 {
+      font-size: 2.3125rem
+    }
+
+    .post h3 {
+      font-size: 1.75rem
+    }
+
+    .post h4 {
+      font-size: 1.5rem
+    }
+
+    .post h5 {
+      font-size: 1.25rem
+    }
+
+    .post h6 {
+      font-size: 1rem
+    }
+
+    .post a {
+      text-decoration: underline;
+    }
+
+    .post pre {
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .post pre>code {
+      white-space: pre;
     }
 
     .sr-only {
