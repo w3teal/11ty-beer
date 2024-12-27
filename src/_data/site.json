@@ -2,7 +2,7 @@
     "title": "11ty Beer Web",
     "shortTitle": "11ty Beer",
     "author": "LIGMATV",
-    "url": "https://11ty-gmx.vercel.app",
+    "url": "https://11ty-beer.vercel.app",
     "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
     "ghRepo": "LIGMATV/11ty-beer",
     "keywords": ["eleventy", "material", "pwa"],
