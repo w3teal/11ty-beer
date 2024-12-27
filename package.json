@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LIGMATV/11ty-gmx.git"
+    "url": "https://github.com/LIGMATV/11ty-beer.git"
   },
   "keywords": [
     "eleventy",
@@ -18,9 +18,9 @@
   ],
   "author": "LIGMATV",
   "license": "MIT",
-  "homepage": "https://github.com/LIGMATV/11ty-gmx#readme",
+  "homepage": "https://github.com/LIGMATV/11ty-beer#readme",
   "bugs": {
-    "url": "https://github.com/LIGMATV/11ty-gmx/issues"
+    "url": "https://github.com/LIGMATV/11ty-beer/issues"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
