@@ -1,5 +1,4 @@
 ---
-layout: layouts/post.njk
 title: Markdown Test Page
 description: This is a test page filled with markdown elements to be used to provide visual feedback.
 date: 2019-07-14
@@ -7,6 +6,8 @@ tags:
  - markdown
  - test
 ---
+
+Based on [fullpipe/markdown-test-page](https://github.com/fullpipe/markdown-test-page/blob/master/test-page.md)
 
 * [Headings](#headings)
 * [Paragraphs](#paragraphs)

@@ -1,13 +1,8 @@
 ---
+permalink: /posts.html
 layout: layouts/default.njk
-pagination:
-  data: collections.tagsList
-  size: 1
-  alias: tag
-permalink: /tags/{{ tag | slug }}/index.html
-eleventyComputed:
-  title: "#{{ tag }}"
-  description: "All the posts that tagged with #{{ tag }}."
+title: "My posts"
+description: All my posts i write in this website.
 ---
 
 <div class="large-space"></div>
@@ -15,7 +10,7 @@ eleventyComputed:
 <div class="space"></div>
 
 <div class="grid">
-    {% for post in collections.posts | filterByTag(tag) %}
+    {% for post in collections.posts | reverse %}
     <article class="s12 m12 l6">
         <h2><a class="link" href="{{ post.url }}">{{ post.data.title }}</a></h2>
         <p>{{ post.date | date }} - by {{ site.author }}</p>

@@ -1,5 +1,4 @@
 ---
-layout: layouts/post.njk
 title: Configuration
 description: Makes your website yours with the customizable configuration.
 date: 2024-12-21
