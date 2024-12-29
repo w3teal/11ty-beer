@@ -17,7 +17,7 @@
             <button class="circle small red" onclick="theme('#f44336')"></button>
             <button class="circle small pink" onclick="theme('#e91e63')"></button>
             <button class="circle small purple" onclick="theme('#9c27b0')"></button>
-            <button class="circle small deep-purple" onclick="theme('#9c27b0')"></button>
+            <button class="circle small deep-purple" onclick="theme('#673ab7')"></button>
             <button class="circle small indigo" onclick="theme('#3f51b5')"></button>
             <button class="circle small blue" onclick="theme('#2196f3')"></button>
             <button class="circle small light-blue" onclick="theme('#03a9f4')"></button>
@@ -40,12 +40,26 @@
 </dialog>
 
 <script>
-    const theme = async (from) => {
-        await ui("theme", from);
-    };
+const mode = () => {
+    let newMode = ui("mode") == "dark" ? "light" : "dark";
+    ui("mode", newMode);
+    localStorage.setItem("applied-mode", newMode);
+};
 
-    const mode = () => {
-        let newMode = ui("mode") == "dark" ? "light" : "dark";
-        ui("mode", newMode);
-    }
+const getSystemMode = () => {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+};
+
+const theme = async (from) => {
+    await ui("theme", from);
+    localStorage.setItem("applied-theme", from);
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedMode = localStorage.getItem("applied-mode") || getSystemMode(); 
+    ui("mode", savedMode);
+
+    const savedTheme = localStorage.getItem("applied-theme") || "#673ab7"; 
+    ui("theme", savedTheme);
+});
 </script>

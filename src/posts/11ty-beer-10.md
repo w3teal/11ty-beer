@@ -29,6 +29,6 @@ And, some more features which I don't pay much attention to
 
 And... Look! **Four Hundos Lighthouse score!**
 
-{% image "/img/four-hundos.jpg" "Four Hundos Lighthouse score" "1366x361" %}
+{% image "/img/four-hundos.webp" "Four Hundos Lighthouse score" "1366x361" %}
 
 That's it. Let's [getting started](/posts/getting-started/) and [learn more about the configurations](/posts/configuration/) you like.

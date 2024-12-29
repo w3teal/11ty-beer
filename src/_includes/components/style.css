@@ -1,0 +1,122 @@
+img {
+    max-width: 100%;
+}
+
+img[width][height] {
+    height: auto;
+}
+
+body.light i.light,
+body.dark i.dark {
+    display: none;
+}
+
+i {
+    border-radius: 0;
+    overflow: visible;
+}
+
+i.si {
+    ---size: 1.35rem;
+    font-display: fallback;
+}
+
+.name {
+    display: block;
+    font-size: 2.25rem;
+    padding-top: 1.25rem;
+}
+
+.post {
+    font-size: .975rem;
+    letter-spacing: 0;
+    line-height: 1.75;
+}
+
+.post h1 {
+    font-size: 3.0625rem
+}
+
+.post h2 {
+    font-size: 2.3125rem
+}
+
+.post h3 {
+    font-size: 1.75rem
+}
+
+.post h4 {
+    font-size: 1.5rem
+}
+
+.post h5 {
+    font-size: 1.25rem
+}
+
+.post h6 {
+    font-size: 1rem
+}
+
+.post a:not(.button) {
+    display: inline-block;
+    text-decoration: underline;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+.post pre {
+    white-space: pre;
+    overflow-x: auto;
+}
+
+.post pre>code {
+    white-space: pre;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+*:has(>.header-anchor) {
+    margin-block-start: 2.25rem !important;
+    position: relative;
+}
+
+*:has(>.header-anchor):hover .header-anchor {
+    opacity: 1;
+    visibility: visible;
+}
+
+*:has(>.header-anchor):target .header-anchor {
+    opacity: 1;
+    visibility: visible;
+    color: var(--on-primary-container);
+}
+
+.header-anchor {
+    opacity: 0;
+    transition: .1s;
+    margin-left: 1rem;
+    visibility: hidden;
+}
+
+.header-anchor .tooltip {
+    inset: auto auto 0 50%;
+    transform: translate(-50%, 100%) scale(.9);
+}
+
+.header-anchor:hover .tooltip {
+    transform: translate(-50%, 100%) scale(1);
+}
+
+.header-anchor::before {
+    content: "#";
+}

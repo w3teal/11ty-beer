@@ -1,6 +1,6 @@
 {
   "name": "11ty-beer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An 11ty blog template with Material Design, PWA and minified files that simply works.",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",

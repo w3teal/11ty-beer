@@ -1,25 +1,36 @@
 ---
 permalink: /sw.js
+eleventyExcludeFromCollections: true
+excludeFromSitemap: true
 ---
-self.addEventListener('install', event => {
-  console.log('Service Worker installed');
+// https://developer.chrome.com/docs/workbox/caching-strategies-overview
+
+const cacheName = '11tyBeerCache_v1';
+
+const precachedAssets = [
+  '/modules/beercss/beer.min.css',
+  '/modules/beercss/beer.min.js',
+  '/modules/beercss/material-symbols-outlined.woff2',
+  '/modules/simple-icons-font/SimpleIcons.woff',
+  '/modules/simple-icons-font/simple-icons.min.css',
+  '/modules/material-dynamic-colors/material-dynamic-colors.min.js'
+];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(caches.open(cacheName).then((cache) => {
+    return cache.addAll(precachedAssets);
+  }));
 });
 
-self.addEventListener('activate', (event) => {
-  const cacheWhitelist = ['pwa'];
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
+self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+  const isPrecachedRequest = precachedAssets.includes(url.pathname);
 
-self.addEventListener('fetch', event => {
-  event.respondWith(fetch(event.request));
+  if (isPrecachedRequest) {
+    event.respondWith(caches.open(cacheName).then((cache) => {
+      return cache.match(event.request.url);
+    }));
+  } else {
+    return;
+  }
 });

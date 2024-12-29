@@ -9,6 +9,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
+  eleventyConfig.addFilter("urlEncode", function(value) {
+    return encodeURIComponent(value);
+  });
+
   const md = markdownIt({ html: true }).use((md) => {
     const defaultRender = md.renderer.rules.heading_close || function (tokens, idx) {
       return md.renderer.renderToken(tokens, idx);
@@ -30,7 +34,6 @@ module.exports = function(eleventyConfig) {
   
   eleventyConfig.setLibrary("md", md);
   
-
   eleventyConfig.addFilter("date", (dateObj) => {
     const year = dateObj.getFullYear();
     const month = String(dateObj.getMonth() + 1).padStart(2, "0");
@@ -54,9 +57,9 @@ module.exports = function(eleventyConfig) {
     return [...tagsSet];
   });
 
-  eleventyConfig.addLiquidShortcode('image', (filename, alt, size) => {
+  eleventyConfig.addLiquidShortcode('image', (filename, alt, size, loading) => {
     const [width, height] = size.split('x');
-    return `<img src="${filename}" alt="${alt}" width="${width}" height="${height}" />`;
+    return `<img src="${filename}" alt="${alt}" width="${width}" height="${height}" loading="${loading}" />`;
   });  
 
   eleventyConfig.addPassthroughCopy({

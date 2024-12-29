@@ -1,6 +1,6 @@
 <nav class="m l left">
     <header>
-        <img class="circle" src="/favicon/ios/64.png" alt="favicon" width="48" height="48">
+        {% include "components/profile.njk" %}
     </header>
     {% for item in site.menuItems %}
     <a {% if item.url %}href="{{ item.url }}"{% endif %}>

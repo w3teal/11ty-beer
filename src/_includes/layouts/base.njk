@@ -4,134 +4,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — {{ site.title }}</title>
   <meta name="description" content="{{ description or site.description }}">
   <meta name="author" content="{{ site.author }}">
-  <meta name="keywords"
-    content="{% set keywords = tags or site.keywords %}{% for tag in keywords %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}">
+  <meta name="keywords" content="{% set keywords = tags or site.keywords %}{% for tag in keywords %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}">
   <meta name="generator" content="Eleventy v3.0.0">
+  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/ios/32.png">
   <link rel="apple-touch-icon" href="/favicon/ios/64.png">
-  <title>{{ title }} — {{ site.title }}</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="{{ title or site.title }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:image" content="https://v1.screenshot.11ty.dev/{{ site.url | urlEncode }}{{ page.url | urlEncode }}/opengraph/">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="A screenshot of the web page at {{ site.url }}">
+
+  <!-- Feeds -->
+  <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
+  <link rel="alternate" href="/feed.json" type="application/json" title="{{ site.title }}">
+
+  <!-- Modules -->
   <link rel="stylesheet" href="/modules/beercss/beer.min.css">
   <script type="module" src="/modules/beercss/beer.min.js"></script>
   <script type="module" src="/modules/material-dynamic-colors/material-dynamic-colors.min.js"></script>
   <link rel="stylesheet" href="/modules/simple-icons-font/simple-icons.min.css">
-  <link rel="manifest" href="/manifest.json">
+
+  <!-- Inline styles, ignore the error -->
   <style>
-    img {
-      max-width: 100%;
-    }
-
-    img[width][height] {
-      height: auto;
-    }
-
-    body.light i.light,
-    body.dark i.dark {
-      display: none;
-    }
-
-    i.si {
-      ---size: 1.35rem;
-    }
-
-    .name {
-      display: block;
-      font-size: 2.25rem;
-      padding-top: 1.25rem;
-    }
-
-    .post {
-      font-size: .975rem;
-      letter-spacing: 0;
-      line-height: 1.75;
-    }
-
-    .post h1 {
-      font-size: 3.0625rem
-    }
-
-    .post h2 {
-      font-size: 2.3125rem
-    }
-
-    .post h3 {
-      font-size: 1.75rem
-    }
-
-    .post h4 {
-      font-size: 1.5rem
-    }
-
-    .post h5 {
-      font-size: 1.25rem
-    }
-
-    .post h6 {
-      font-size: 1rem
-    }
-
-    .post a {
-      text-decoration: underline;
-    }
-
-    .post pre {
-      white-space: pre;
-      overflow-x: auto;
-    }
-
-    .post pre>code {
-      white-space: pre;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-
-    *:has(>.header-anchor) {
-      margin-block-start: 2.25rem !important;
-      position: relative;
-    }
-
-    *:has(>.header-anchor):hover .header-anchor {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    *:has(>.header-anchor):target .header-anchor {
-      opacity: 1;
-      visibility: visible;
-      color: var(--on-primary-container);
-    }
-
-    .header-anchor {
-      opacity: 0;
-      transition: .1s;
-      margin-left: 1rem;
-      visibility: hidden;
-    }
-
-    .header-anchor .tooltip {
-      inset: auto auto 0 50%;
-      transform: translate(-50%, 100%) scale(.9);
-    }
-
-    .header-anchor:hover .tooltip {
-      transform: translate(-50%, 100%) scale(1);
-    }
-
-    .header-anchor::before {
-      content: "#";
-    }
+    {% include "components/style.css" %}
   </style>
 </head>
 

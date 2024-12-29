@@ -2,7 +2,7 @@
     <header class="fixed">
         <nav>
             <div class="row max truncate">
-                <img class="circle" src="/favicon/ios/64.png" alt="favicon" width="48" height="48">
+                {% include "components/profile.njk" %}
                 <h6 class="max">My posts</h6>
             </div>
             <div class="row">
@@ -17,7 +17,7 @@
         </nav>
     </header>
     {% for post in collections.posts | reverse %}
-    <article class="s12 m12 l6{% if page.url == post.url %} primary-container active{% endif %}">
+    <article class="s12 m12 l6{% if page.url == post.url %} secondary-container active{% endif %}">
         <h2><a class="link" href="{{ post.url }}">{{ post.data.title }}</a></h2>
         <p>{{ post.date | date }} - by {{ site.author }}</p>
         <p class="text-sm">{{ post.data.description }}</p>

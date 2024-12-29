@@ -1,4 +1,6 @@
 {
+    "locale": "en_US",
+    "lang": "en",
     "title": "11ty Beer Web",
     "shortTitle": "11ty Beer",
     "author": "LIGMATV",
@@ -7,6 +9,7 @@
     "ghRepo": "LIGMATV/11ty-beer",
     "keywords": ["eleventy", "material", "pwa"],
     "socialItems": [
+        { "title": "Feed", "url": "/feed.xml", "icon": "rss" },
         { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
         { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "devdotto" }
     ],

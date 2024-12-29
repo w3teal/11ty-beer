@@ -1,0 +1,26 @@
+---
+permalink: /404.html
+eleventyExcludeFromCollections: true
+excludeFromSitemap: true
+layout: layouts/default.njk
+title: "Not Found"
+description: Sorry, this page doesn't exist.
+---
+
+<div class="large-space"></div>
+
+<article class="transparent center-align post">
+    <div>
+      <i class="extra">cancel</i>
+      <h2>{{ title }}</h2>
+      <p>
+        {{ description }} <br>
+        Try to visit our <a href="/">homepage</a> or <a href="javascript:ui('#dialog-posts');">posts</a>.
+      </p>
+      <div class="space"></div>
+      <label>If you think this is an issue, try to make an issue in our GitHub repository.</label>
+      <nav class="center-align">
+        <a class="button border" href="https://github.com/{{ site.ghRepo }}/issues/new">New issue</a>
+      </nav>
+    </div>
+  </article>
