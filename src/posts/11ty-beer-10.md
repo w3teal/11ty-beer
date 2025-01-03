@@ -1,19 +1,19 @@
 ---
 title: 11ty Beer 1.0
-description: An 11ty starter that built for anyone without hard changes.
+description: An 11ty starter built for anyone without hard changes.
 date: 2024-12-27
 tags:
  - release-note
 ---
 
 Finally, the first stable version of 11ty Beer just dropped, even before 2025!  
-Basically, i built this blog because all i want for an blog just:
+Basically, i built this blog because all i want from a blog is:
 
 - Responsive
 - Simple structure & code
 - Simple configuration
 
-What the features you gonna get from use this starter? Simple, just:
+What features you gonna get from this starter? Simple, just:
 - Material designed with [BeerCSS](https://github.com/beercss/beercss)
 - [PWA (Progressive Web App)](https://en.wikipedia.org/wiki/Progressive_web_app)
 - [Posts](https://11ty-beer.vercel.app/posts/) (exactly)
@@ -31,4 +31,4 @@ And... Look! **Four Hundos Lighthouse score!**
 
 {% image "/img/four-hundos.webp" "Four Hundos Lighthouse score" "1366x361" %}
 
-That's it. Let's [getting started](/posts/getting-started/) and [learn more about the configurations](/posts/configuration/) you like.
+That's it. Let's [get started](/posts/getting-started/) and [learn more about the configuration](/posts/configuration/) you like.

@@ -8,7 +8,7 @@ tags:
  - theme
 ---
 
-Already getting started your post? It's time to **learn more** for makes your website yours with the customizable configuration.
+Already getting started your post? It's time to **learn more** to makes your website yours with the customizable configuration.
 
 Here's some customization to make your site more yours.  
 Firstly, you can open the `_data/site.json` file, you will find some configuration here.
@@ -111,10 +111,10 @@ Used in the footer. There's a 3 strings for every arrays you need to fill.
 
 ## Menu items
 
-Used as lists in sidebar menu. There's a 3 strings for every arrays you need to fill.
+Used as lists in sidebar menu. There are 3 strings for every arrays you need to fill.
 1. `title`: The title of the page.
 2. `url`: The link to the page. For triggering with [`data-ui`](https://github.com/beercss/beercss/blob/main/docs/JAVASCRIPT.md#the-trigger-of-elements), use `javascript:ui('...')`.
-3. `icon`: The icon that presenting the page. You can find the icon names in [Google Fonts](https://fonts.google.com/icons).
+3. `icon`: The icon that is presenting the page. You can find the icon names in [Google Fonts](https://fonts.google.com/icons).
 ```
     "menuItems": [
         { "title": "Home", "url": "/", "icon": "home" },
