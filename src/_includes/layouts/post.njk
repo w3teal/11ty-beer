@@ -19,8 +19,8 @@ date: 2016-01-01
 <div class="space"></div>
 
 <h1>{{ title }}</h1>
-<p>{{ description }}</p>
-<p>{{ date | date }} - by {{ site.author }} </p>
+<p class="date">{{ date | date }} - by {{ site.author }} </p>
+<p class="no-margin">{{ description }}</p>
 <nav class="gap-sm">
     {% for tag in tags %}
     <a class="btn chip" href="/tags/{{ tag }}/">#{{ tag }}</a>

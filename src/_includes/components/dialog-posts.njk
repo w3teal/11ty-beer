@@ -19,8 +19,8 @@
     {% for post in collections.posts | reverse %}
     <article class="s12 m12 l6{% if page.url == post.url %} secondary-container active{% endif %}">
         <h2><a class="link" href="{{ post.url }}">{{ post.data.title }}</a></h2>
-        <p>{{ post.date | date }} - by {{ site.author }}</p>
-        <p class="text-sm">{{ post.data.description }}</p>
+        <p class="date">{{ post.date | date }} - by {{ site.author }}</p>
+        <p class="no-margin">{{ post.data.description }}</p>
         <nav class="wrap">
             {% for tag in post.data.tags %}
             <a class="chip" href="/tags/{{ tag }}/">#{{ tag }}</a>

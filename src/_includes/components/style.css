@@ -1,3 +1,20 @@
+body,
+:is(table) {
+    font-family: var(--font);
+    font-size: 1.15rem;
+    letter-spacing: 0;
+    line-height: 1.675;
+}
+
+body.light i.light,
+body.dark i.dark {
+    display: none;
+}
+
+::selection {
+    background: var(--inverse-primary);
+}
+
 img {
     max-width: 100%;
 }
@@ -6,9 +23,8 @@ img[width][height] {
     height: auto;
 }
 
-body.light i.light,
-body.dark i.dark {
-    display: none;
+table {
+    overflow-x: auto;
 }
 
 i {
@@ -21,40 +37,24 @@ i.si {
     font-display: fallback;
 }
 
+.date {
+    font-size: .875rem;
+    margin-block-end: .25rem;
+}
+
 .name {
     display: block;
-    font-size: 2.25rem;
-    padding-top: 1.25rem;
+    font-size: 2.8125rem;
 }
 
-.post {
-    font-size: .975rem;
-    letter-spacing: 0;
-    line-height: 1.75;
+nav:is(.left,.right,.top,.bottom):not(.drawer)>a:not(.button,.chip) {
+    font-size: .875rem;
 }
 
-.post h1 {
-    font-size: 3.0625rem
-}
-
-.post h2 {
-    font-size: 2.3125rem
-}
-
-.post h3 {
-    font-size: 1.75rem
-}
-
-.post h4 {
-    font-size: 1.5rem
-}
-
-.post h5 {
-    font-size: 1.25rem
-}
-
-.post h6 {
-    font-size: 1rem
+.post p+:not(p), 
+.post p:has(>*) {
+    display: block;
+    margin: 1.5rem 0;
 }
 
 .post a:not(.button) {
