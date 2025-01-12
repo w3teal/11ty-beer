@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
     "src/public": "/",
     "node_modules/beercss/dist/cdn": "/modules/beercss",
     "node_modules/material-dynamic-colors/dist/cdn": "/modules/material-dynamic-colors",
+    "node_modules/simple-icons-font/font": "/modules/simple-icons-font",
   });
 
   return {
