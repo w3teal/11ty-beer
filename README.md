@@ -2,7 +2,9 @@
 
 An 11ty blog template with Material Design, PWA and minified files that simply works.
 
-## How to use
+## Install
+
+### With terminal
 
 1. Clone this repository: `git clone https://github.com/LIGMATV/11ty-beer.git`
 2. Open that directory: `cd 11ty-beer`
@@ -10,10 +12,28 @@ An 11ty blog template with Material Design, PWA and minified files that simply w
 4. Start development: `npm start`
 5. See your website at http://localhost:8080/
 
+### Instant deploy
+
+- If you want to create a repository on GitHub first: **[git.new/11ty-beer](https://git.new/11ty-beer)**
+- **(RECOMMENDED)** If you want to create a repository and automically deploy with Vercel: **[dub.sh/11ty-beer](https://dub.sh/11ty-beer)**
+
+## Features
+
+- Flawless **[simple installment](#install)**.
+- Using **latest and stable** version of Eleventy [(v3.0.0)](https://github.com/11ty/eleventy/releases/tag/v3.0.0).
+- **Consistent pages directory**, root pages in [`/src/pages`](/src/pages) and posts in [`/src/posts/`](/src/posts/).
+- 11ty utilities **neatly arranged** in [`_utilities`](/_utilities), also the [sources](/src).
+- SEO and accesibility focused, bring the **Four-hundos Lighthouse score**.
+- **Easier navigation** with the exclusive modals for posts and tags.
+- Just **[one configuration](/src/_data/site.json)** to go.
+- Included **PWA, sitemap, feeds** and [common SEO things](/src/common/).
+- All that is outside your head, **[SEO metas, icons, open graph, and feeds](/src/_includes/layouts/base.njk#L5-L31)**.
+- Designed **beautiful and professional** with the bold Material Design.
+
 ## [Demo](https://11ty-beer.vercel.app/)
 
-![11ty Beer Screenshot (27/12/2024)](https://github.com/user-attachments/assets/0c25450f-e202-4896-9076-e58bac74fa1e)
+[![11ty Beer Screenshot (v1.1.0)](https://i.imgur.com/8k1iUpg.png)](https://11ty-beer.vercel.app/)
 
 ---
 
-Built with [11ty](https://github.com/11ty/eleventy/) and [BeerCSS](https://github.com/beercss/beercss) 🍻✨
+Built with [11ty](https://github.com/11ty/eleventy/) [`v3.0.0`](https://github.com/LIGMATV/11ty-beer/blob/main/package.json#L26) and [BeerCSS](https://github.com/beercss/beercss) [`3.8.0`](https://github.com/LIGMATV/11ty-beer/blob/main/package.json#L27) 🍻✨
