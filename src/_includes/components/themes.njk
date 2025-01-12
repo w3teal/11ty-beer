@@ -5,8 +5,8 @@
                 <h5>Themes</h5>
             </div>
             <button class="circle border large" onclick="mode()">
-                <i class="dark large">dark_mode</i>
-                <i class="light large">light_mode</i>
+                <i class="dark large">{% icon "mdi:weather-night" %}</i>
+                <i class="light large">{% icon "mdi:weather-sunny" %}</i>
                 <div class="tooltip bottom">Toggle theme</div>
             </button>
             <button class="circle transparent" data-ui="#dialog-themes"><i>close</i></button>
@@ -17,7 +17,7 @@
             <button class="circle small red" onclick="theme('#f44336')"></button>
             <button class="circle small pink" onclick="theme('#e91e63')"></button>
             <button class="circle small purple" onclick="theme('#9c27b0')"></button>
-            <button class="circle small deep-purple" onclick="theme('#673ab7')"></button>
+            <button class="circle small deep-purple" onclick="theme('#6750a4')"></button>
             <button class="circle small indigo" onclick="theme('#3f51b5')"></button>
             <button class="circle small blue" onclick="theme('#2196f3')"></button>
             <button class="circle small light-blue" onclick="theme('#03a9f4')"></button>
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedMode = localStorage.getItem("applied-mode") || getSystemMode(); 
     ui("mode", savedMode);
 
-    const savedTheme = localStorage.getItem("applied-theme") || "#673ab7"; 
+    const savedTheme = localStorage.getItem("applied-theme") || "#6750a4"; 
     ui("theme", savedTheme);
 });
 </script>

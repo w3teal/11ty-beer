@@ -7,11 +7,11 @@
             </div>
             <div class="row">
                 <a class="button circle large border" href="/posts/" target="_blank">
-                    <i>open_in_new</i>
+                    <i>{% icon "mdi:open-in-new" %}</i>
                     <div class="tooltip bottom">Open in New Tab</div>
                 </a>
-                <button class="transparent circle large" data-ui="#dialog-posts">
-                    <i>close</i>
+                <button class="transparent circle" data-ui="#dialog-posts">
+                    <i>{% icon "mdi:close" %}</i>
                 </button>
             </div>
         </nav>
@@ -29,7 +29,7 @@
         <nav>
             <div class="max"></div>
             <a class="button tonal no-margin" href="{{ post.url }}" {% if page.url == post.url %}disabled{% endif %}>
-                <i>book_5</i>
+                <i>{% icon "mdi:book-arrow-up-outline" %}</i>
                 Read this post
             </a>
         </nav>

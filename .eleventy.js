@@ -1,29 +1,31 @@
 const slugify = require("slugify");
-const configureMarkdown = require("./_utilities/markdown");
 const filesMinifier = require("./_utilities/filesMinifier");
+const generateSlug = require('./_utilities/markdownSlug');
 const dateFilter = require("./_utilities/dateFilter");
 const urlEncode = require("./_utilities/urlEncode");
 const postsCollection = require("./_utilities/postsCollection");
 const tagsListCollection = require("./_utilities/tagsListCollection");
 const filterByTag = require("./_utilities/filterByTag");
 const imageShortcode = require("./_utilities/imageShortcode");
+const getIcons = require("./_utilities/getIcons");
 
 module.exports = function (eleventyConfig) {
 
-  configureMarkdown(eleventyConfig, slugify);
   filesMinifier(eleventyConfig);
+  generateSlug(eleventyConfig, slugify);
   eleventyConfig.addFilter("date", dateFilter);
   eleventyConfig.addFilter("urlEncode", urlEncode);
   eleventyConfig.addCollection("posts", postsCollection);
   eleventyConfig.addCollection("tagsList", tagsListCollection);
   eleventyConfig.addFilter("filterByTag", filterByTag);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  getIcons(eleventyConfig);
 
   eleventyConfig.addPassthroughCopy({
     "src/public": "/",
-    "node_modules/beercss/dist/cdn": "/modules/beercss",
-    "node_modules/material-dynamic-colors/dist/cdn": "/modules/material-dynamic-colors",
-    "node_modules/simple-icons-font/font": "/modules/simple-icons-font",
+    "node_modules/beercss/dist/cdn/beer.min.css": "/modules/beercss/beer.min.css",
+    "node_modules/beercss/dist/cdn/beer.min.js": "/modules/beercss/beer.min.js",
+    "node_modules/material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js": "/modules/material-dynamic-colors/material-dynamic-colors.min.js",
   });
 
   return {

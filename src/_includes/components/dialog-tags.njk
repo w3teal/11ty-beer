@@ -8,18 +8,18 @@
                 </div>
                 <div class="row">
                     <a class="button circle large border" href="/tags/" target="_blank">
-                        <i>open_in_new</i>
+                        <i>{% icon "mdi:open-in-new" %}</i>
                         <div class="tooltip bottom">Open in New Tab</div>
                     </a>
-                    <button class="transparent circle large" data-ui="#dialog-tags">
-                        <i>close</i>
+                    <button class="transparent circle" data-ui="#dialog-tags">
+                        <i>{% icon "mdi:close" %}</i>
                     </button>
                 </div>
             </nav>
         </header>
         {% for tag in collections.tagsList %}
         <a href="/tags/{{ tag | slug }}/" {% if page.url == '/tags/' ~ (tag | slug) ~ '/' %} class="active"{% endif %}>
-            <i>tag</i>
+            <i>{% icon "mdi:pound" %}</i>
             {{ tag }}
         </a>        
         {% endfor %}

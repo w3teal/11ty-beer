@@ -24,11 +24,13 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "@mdi/svg": "^7.4.47",
     "beercss": "^3.8.0",
+    "eleventy-plugin-icons": "^4.5.1",
     "luxon": "^3.5.0",
     "markdown-it": "^14.1.0",
     "material-dynamic-colors": "^1.1.2",
-    "simple-icons-font": "^14.0.0"
+    "simple-icons": "^14.2.0"
   },
   "devDependencies": {
     "@sherby/eleventy-plugin-files-minifier": "^1.1.1"

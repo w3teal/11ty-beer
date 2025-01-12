@@ -4,7 +4,7 @@
     </header>
     {% for item in site.menuItems %}
     <a {% if item.url %}href="{{ item.url }}"{% endif %}>
-        <i>{{ item.icon }}</i>
+        <i>{% icon "mdi:" + item.icon %}</i>
         <span>{{ item.title }}</span>
     </a>
     {% endfor %}

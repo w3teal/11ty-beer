@@ -27,14 +27,13 @@ table {
     overflow-x: auto;
 }
 
-i {
-    border-radius: 0;
-    overflow: visible;
+:is(i:not(nav>a>i), svg) {
+    border-radius: 0 !important;
 }
 
-i.si {
-    ---size: 1.35rem;
-    font-display: fallback;
+i>svg {
+    position: initial !important;
+    padding: 0 !important;
 }
 
 .date {

@@ -14,9 +14,9 @@
         { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "devdotto" }
     ],
     "menuItems": [
-        { "title": "Home", "url": "/", "icon": "home" },
-        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "pages" },
-        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "sell" },
-        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette" }
+        { "title": "Home", "url": "/", "icon": "home-variant-outline" },
+        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "star-box-outline" },
+        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "tag-multiple-outline" },
+        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette-outline" }
     ]
 }
