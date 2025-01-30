@@ -12,7 +12,8 @@ Already getting started your post? It's time to **learn more** to makes your web
 
 Here's some customization to make your site more yours.  
 Firstly, you can open the `_data/site.json` file, you will find some configuration here.
-```
+
+```json
 {
     "locale": "en_US",
     "lang": "en",
@@ -26,13 +27,13 @@ Firstly, you can open the `_data/site.json` file, you will find some configurati
     "socialItems": [
         { "title": "Feed", "url": "/feed.xml", "icon": "rss" },
         { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
-        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "devdotto" }
+        { "title": "Mastodon", "url": "https://techhub.social/@ligmatv", "icon": "mastodon", "rel": "me" }
     ],
     "menuItems": [
-        { "title": "Home", "url": "/", "icon": "home" },
-        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "pages" },
-        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "sell" },
-        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette" }
+        { "title": "Home", "url": "/", "icon": "home-variant-outline" },
+        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "star-box-outline" },
+        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "tag-multiple-outline" },
+        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette-outline" }
     ]
 }
 ```
@@ -41,7 +42,7 @@ Firstly, you can open the `_data/site.json` file, you will find some configurati
 
 The locale and language of your website. Native locale is optional.
 
-```
+```json
     "locale": "en_US",
     "lang": "en",
 ```
@@ -49,7 +50,8 @@ The locale and language of your website. Native locale is optional.
 ## Title & Short title
 
 The title or name for your website. Short title is used for your PWA's app name.
-```
+
+```json
     "title": "11ty GMX Web",
     "shortTitle": "11ty GMX",
 ```
@@ -60,14 +62,16 @@ The title or name for your website. Short title is used for your PWA's app name.
 
 Who's the author? Ghost? You can change it by changes the `author` string.  
 Example of the usage: `<meta name="author" content="LIGMATV">`
-```
+
+```json
     "author": "LIGMATV",
 ```
 
 ### Url
 
 Url to your (this) website. Used in `sitemap.xml` and `robots.txt` for search engine optimization.
-```
+
+```json
     "url": "https://11ty-beer.vercel.app",
 ```
 
@@ -75,7 +79,8 @@ Url to your (this) website. Used in `sitemap.xml` and `robots.txt` for search en
 
 The default description if the `description` string in the frontmatter is not filled.  
 Example of the usage: `<meta name="description" content="Welcome to my blog, powered by 11ty & GMX.css.">`
-```
+
+```json
     "description": "Welcome to my blog, powered by 11ty & GMX.css.",
 ```
 
@@ -83,7 +88,8 @@ Example of the usage: `<meta name="description" content="Welcome to my blog, pow
 
 The github repository which used for hosting the website code.  
 Example of the usage: The "View source of this page" and "Edit this page" button in posts.
-```
+
+```json
     "ghRepo": "LIGMATV/11ty-beer",
 ```
 
@@ -91,7 +97,8 @@ Example of the usage: The "View source of this page" and "Edit this page" button
 
 The default keywords if the `tags` array in the frontmatter is not filled.  
 Example of the usage: `<meta name="keywords" content="eleventy, material, pwa">`
-```
+
+```json
     "keywords": ["eleventy", "material", "pwa"],
 ```
 
@@ -101,11 +108,13 @@ Used in the footer. There's a 3 strings for every arrays you need to fill.
 1. `title`: The title/name of the social media.
 2. `url`: The social media URL.
 3. `icon`: The logo for the website. You can find the logo names in [Simple Icons](https://simpleicons.org/).  
-```
+4. `rel`: (Optional) The relationship between the website and social media. Useful for [Fediverse verification](https://docs.joinmastodon.org/user/profile/#verification).
+
+```json
     "socialItems": [
         { "title": "Feed", "url": "/feed.xml", "icon": "rss" },
         { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
-        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "devdotto" }
+        { "title": "Mastodon", "url": "https://techhub.social/@ligmatv", "icon": "mastodon", "rel": "me" }
     ],
 ```
 
@@ -114,12 +123,19 @@ Used in the footer. There's a 3 strings for every arrays you need to fill.
 Used as lists in sidebar menu. There are 3 strings for every arrays you need to fill.
 1. `title`: The title of the page.
 2. `url`: The link to the page. For triggering with [`data-ui`](https://github.com/beercss/beercss/blob/main/docs/JAVASCRIPT.md#the-trigger-of-elements), use `javascript:ui('...')`.
-3. `icon`: The icon that is presenting the page. You can find the icon names in [Google Fonts](https://fonts.google.com/icons).
-```
+3. `icon`: The icon that is presenting the page. You can find the icon names in [Pictogrammer's Material Design Icons](https://pictogrammers.com/library/mdi/).
+
+```json
     "menuItems": [
-        { "title": "Home", "url": "/", "icon": "home" },
-        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "pages" },
-        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "sell" },
-        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette" }
+        { "title": "Home", "url": "/", "icon": "home-variant-outline" },
+        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "star-box-outline" },
+        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "tag-multiple-outline" },
+        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette-outline" }
     ]
 ```
+
+## Favicons
+
+To create a complete favicon for PWA and various platforms in the right size and format, we rely on the [image generator from PWA Builder ↗](https://www.pwabuilder.com/imageGenerator). Once the zip is created, you can extract it to `src/public/favicon`, which includes the `android`, `ios`, and `windows11` folders.
+
+You can see the [demonstration of the generated favicons](/posts/favicons/) by PWA Builder

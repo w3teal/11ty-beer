@@ -11,7 +11,7 @@
     "socialItems": [
         { "title": "Feed", "url": "/feed.xml", "icon": "rss" },
         { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
-        { "title": "DEV.to", "url": "https://dev.to/ligmatv", "icon": "devdotto" }
+        { "title": "Mastodon", "url": "https://techhub.social/@ligmatv", "icon": "mastodon", "rel": "me" }
     ],
     "menuItems": [
         { "title": "Home", "url": "/", "icon": "home-variant-outline" },

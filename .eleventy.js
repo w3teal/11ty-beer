@@ -1,6 +1,7 @@
 const slugify = require("slugify");
 const filesMinifier = require("./_utilities/filesMinifier");
 const generateSlug = require('./_utilities/markdownSlug');
+const syntaxHighlight = require("./_utilities/syntaxHighlight");
 const dateFilter = require("./_utilities/dateFilter");
 const urlEncode = require("./_utilities/urlEncode");
 const postsCollection = require("./_utilities/postsCollection");
@@ -13,6 +14,7 @@ module.exports = function (eleventyConfig) {
 
   filesMinifier(eleventyConfig);
   generateSlug(eleventyConfig, slugify);
+  syntaxHighlight(eleventyConfig);
   eleventyConfig.addFilter("date", dateFilter);
   eleventyConfig.addFilter("urlEncode", urlEncode);
   eleventyConfig.addCollection("posts", postsCollection);

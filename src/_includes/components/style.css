@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body,
 :is(table) {
     font-family: var(--font);
@@ -12,7 +16,8 @@ body.dark i.dark {
 }
 
 ::selection {
-    background: var(--inverse-primary);
+    background: var(--primary);
+    color: var(--background);
 }
 
 img {
