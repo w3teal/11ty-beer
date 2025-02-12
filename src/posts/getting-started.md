@@ -25,8 +25,9 @@ It's simple, anyone gonna love how simple is this starter built.
 
 ```
 11ty-beer/
-├── 📂 _site                <-- The website result
-├── 📂 node_modules         <-- Modules that made it
+├── 📂 _site                <-- The website result (gitignored)
+├── 📂 _utilities           <-- 11ty utilities
+├── 📂 node_modules         <-- Package modules (gitignored)
 ├── 📂 src/                 <-- Whole source
 │   └── 📂 _data               <-- Global data
 │       └── 📄 site.json       <-- All your configuration here!

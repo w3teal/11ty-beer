@@ -14,7 +14,9 @@ date: 2016-01-01
 <p class="no-margin">{{ description }}</p>
 <nav class="gap-sm">
     {% for tag in tags %}
-    <a class="btn chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
+    {% if "posts" not in tag %}
+    <a class="chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
+    {% endif %}
     {% endfor %}
 </nav>
 

@@ -4,7 +4,6 @@ const generateSlug = require('./_utilities/markdownSlug');
 const syntaxHighlight = require("./_utilities/syntaxHighlight");
 const dateFilter = require("./_utilities/dateFilter");
 const urlEncode = require("./_utilities/urlEncode");
-const postsCollection = require("./_utilities/postsCollection");
 const tagsListCollection = require("./_utilities/tagsListCollection");
 const filterByTag = require("./_utilities/filterByTag");
 const imageShortcode = require("./_utilities/imageShortcode");
@@ -17,7 +16,6 @@ module.exports = function (eleventyConfig) {
   syntaxHighlight(eleventyConfig);
   eleventyConfig.addFilter("date", dateFilter);
   eleventyConfig.addFilter("urlEncode", urlEncode);
-  eleventyConfig.addCollection("posts", postsCollection);
   eleventyConfig.addCollection("tagsList", tagsListCollection);
   eleventyConfig.addFilter("filterByTag", filterByTag);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);

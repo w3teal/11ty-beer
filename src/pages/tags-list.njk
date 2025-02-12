@@ -13,7 +13,7 @@ description: All the tags i used for the posts in this website.
 <article class="no-padding" style="overflow: hidden;">
   {% for tag in collections.tagsList %}
     <a class="row wave padding" href="/tags/{{ tag | slug }}/">
-      <i>tag</i>
+      <i>{% icon "mdi:pound" %}</i>
       <div class="max">
         <h6 class="small">{{ tag }}</h6>
       </div>

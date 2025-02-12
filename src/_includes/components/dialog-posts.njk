@@ -6,7 +6,7 @@
                 <h6 class="max">My posts</h6>
             </div>
             <div class="row">
-                <a class="button circle large border" href="/posts/" target="_blank">
+                <a class="button circle large border" href="/tags/posts/" target="_blank">
                     <i>{% icon "mdi:open-in-new" %}</i>
                     <div class="tooltip bottom">Open in New Tab</div>
                 </a>
@@ -23,7 +23,9 @@
         <p class="no-margin">{{ post.data.description }}</p>
         <nav class="wrap">
             {% for tag in post.data.tags %}
-            <a class="chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
+            {% if "posts" not in tag %}
+            <a class="btn chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
+            {% endif %}
             {% endfor %}
         </nav>
         <nav>

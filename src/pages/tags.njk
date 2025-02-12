@@ -11,24 +11,28 @@ eleventyComputed:
 ---
 
 <div class="large-space"></div>
-<h1>{{ title }}</h1>
+<h1>
+    <span class="link">#</span><span>{{ tag }}</span>
+</h1>
 <div class="space"></div>
 
 <div class="grid">
-    {% for post in collections.posts | filterByTag(tag) %}
+    {% for post in collections.posts | filterByTag(tag) | reverse %}
     <article class="s12 m12 l6">
         <h2><a class="link" href="{{ post.url }}">{{ post.data.title }}</a></h2>
         <p class="date">{{ post.date | date }} - by {{ site.author }}</p>
         <p class="no-margin">{{ post.data.description }}</p>
         <nav class="wrap">
             {% for tag in post.data.tags %}
+            {% if "posts" not in tag %}
             <a class="chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
+            {% endif %}
             {% endfor %}
         </nav>
         <nav>
             <div class="max"></div>
             <a class="button tonal no-margin" href="{{ post.url }}">
-                <i>book_5</i>
+                <i>{% icon "mdi:book-arrow-up-outline" %}</i>
                 Read this post
             </a>
         </nav>
