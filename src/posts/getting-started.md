@@ -1,19 +1,25 @@
 ---
 title: Getting Started
-description: Tutorial how to use it with Terminal.
+description: Start build a 11ty Beer website and deploy it.
 date: 2024-12-20
 tags:
  - tutorial
- - markdown
 ---
 
-## How to use
+## Install
 
-1. Clone this repository: `git clone https://github.com/LIGMATV/11ty-gmx.git`
-2. Open that directory: `cd 11ty-gmx`
+### With terminal
+
+1. Clone this repository: `git clone https://github.com/LIGMATV/11ty-beer.git`
+2. Open that directory: `cd 11ty-beer`
 3. Install dependencies: `npm install`
 4. Start development: `npm start`
 5. See your website at http://localhost:8080/
+
+### Instant deploy
+
+- If you want to create a repository on GitHub first: **[git.new/11ty-beer](https://git.new/11ty-beer)**
+- **(RECOMMENDED)** If you want to create a repository and automically deploy with Vercel: **[dub.sh/11ty-beer](https://dub.sh/11ty-beer)**
 
 ## Configuration
 

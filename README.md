@@ -2,6 +2,13 @@
 
 An 11ty blog template with Material Design, PWA and minified files that simply works.
 
+![Homepage](src/public/img/homepage.webp)
+![Posts dialog](src/public/img/dialog-posts.webp)
+![Tags dialog](src/public/img/dialog-tags.webp)
+![Themes](src/public/img/themes.webp)
+
+---
+
 ## Install
 
 ### With terminal
@@ -23,16 +30,12 @@ An 11ty blog template with Material Design, PWA and minified files that simply w
 - Using **latest and stable** version of Eleventy [(v3.0.0)](https://github.com/11ty/eleventy/releases/tag/v3.0.0).
 - **Consistent pages directory**, root pages in [`/src/pages`](/src/pages) and posts in [`/src/posts/`](/src/posts/).
 - 11ty utilities **neatly arranged** in [`_utilities`](/_utilities), also the [sources](/src).
-- SEO and accesibility focused, bring the **Four-hundos Lighthouse score**.
+- SEO and accesibility focused, bring the **Four-hundos Lighthouse score**. [(Let you test in Pagespeed)](https://pagespeed.web.dev/analysis?url=https%3A%2F%2F11ty-beer.vercel.app%2F)
 - **Easier navigation** with the exclusive modals for posts and tags.
 - Just **[one configuration](/src/_data/site.json)** to go.
 - Included **PWA, sitemap, feeds** and [common SEO things](/src/common/).
 - All that is outside your head, **[SEO metas, icons, open graph, and feeds](/src/_includes/layouts/base.njk#L5-L31)**.
 - Designed **beautiful and professional** with the bold Material Design.
-
-## [Demo](https://11ty-beer.vercel.app/)
-
-[![11ty Beer Screenshot (v1.1.0)](https://i.imgur.com/8k1iUpg.png)](https://11ty-beer.vercel.app/)
 
 ---
 

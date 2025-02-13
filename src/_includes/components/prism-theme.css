@@ -12,7 +12,7 @@
 */
 pre[class*="language-"],
 code[class*="language-"] {
-  color: var(--primary);
+  color: var(--tertiary);
   text-shadow: none;
   direction: ltr;
   text-align: left;
@@ -77,7 +77,7 @@ pre[class*="language-"] {
 :is(.token.atrule,
 .token.attr-value,
 .token.keyword) {
-  color: inherit;
+  color: var(--primary);
 }
 :is(.token.selector,
 .token.attr-name,

@@ -5,6 +5,7 @@
     "shortTitle": "11ty Beer",
     "author": "LIGMATV",
     "url": "https://11ty-beer.vercel.app",
+    "theme": "#6750a4",
     "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
     "ghRepo": "LIGMATV/11ty-beer",
     "keywords": ["eleventy", "material", "pwa"],

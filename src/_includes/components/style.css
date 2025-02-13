@@ -55,7 +55,7 @@ nav:is(.left,.right,.top,.bottom):not(.drawer)>a:not(.button,.chip) {
     font-size: .875rem;
 }
 
-.post p+:not(p), 
+.post p+:not(p, svg), 
 .post p:has(>*) {
     display: block;
     margin: 1.5rem 0;
@@ -75,6 +75,13 @@ nav:is(.left,.right,.top,.bottom):not(.drawer)>a:not(.button,.chip) {
 
 .post pre>code {
     white-space: pre;
+}
+
+.post svg {
+    display: inline-block;
+    ---size: 1.75rem;
+    width: var(---size);
+    height: var(---size);
 }
 
 .sr-only {
@@ -123,4 +130,8 @@ nav:is(.left,.right,.top,.bottom):not(.drawer)>a:not(.button,.chip) {
 
 .header-anchor::before {
     content: "#";
+}
+
+.default-theme {
+    color: #ffffff;
 }

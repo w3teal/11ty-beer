@@ -21,13 +21,14 @@ Firstly, you can open the `_data/site.json` file, you will find some configurati
     "shortTitle": "11ty Beer",
     "author": "LIGMATV",
     "url": "https://11ty-beer.vercel.app",
+    "theme": "#6750a4",
     "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
     "ghRepo": "LIGMATV/11ty-beer",
     "keywords": ["eleventy", "material", "pwa"],
     "socialItems": [
         { "title": "Feed", "url": "/feed.xml", "icon": "rss" },
         { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
-        { "title": "Mastodon", "url": "https://techhub.social/@ligmatv", "icon": "mastodon", "rel": "me" }
+        { "title": "Mastodon", "url": "https://mastodon.scot/@l", "icon": "mastodon", "rel": "me" }
     ],
     "menuItems": [
         { "title": "Home", "url": "/", "icon": "home-variant-outline" },
@@ -73,6 +74,14 @@ Url to your (this) website. Used in `sitemap.xml` and `robots.txt` for search en
 
 ```json
     "url": "https://11ty-beer.vercel.app",
+```
+
+## Theme
+
+Default theme for BeerCSS
+
+```json
+    "theme": "#6750a4",
 ```
 
 ### Description
