@@ -35,7 +35,13 @@ Firstly, you can open the `_data/site.json` file, you will find some configurati
         { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "star-box-outline" },
         { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "tag-multiple-outline" },
         { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette-outline" }
-    ]
+    ],
+    "giscus": {
+        "dataRepo": "ligmatv/11micro",
+        "dataRepoID": "R_kgDON1R6_Q",
+        "dataCategory": "Post Comments",
+        "dataCategoryID": "DIC_kwDON1R6_c4CnCYA"
+    }
 }
 ```
 
@@ -141,6 +147,27 @@ Used as lists in sidebar menu. There are 3 strings for every arrays you need to 
         { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "tag-multiple-outline" },
         { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette-outline" }
     ]
+```
+
+## Comments (Giscus)
+
+Add comments feature for every posts.
+1. In the repository where your 11ty Beer used, enable the Discussion feature.  
+    You can [learn more at GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository).
+2. [Install Giscus](https://github.com/apps/giscus) to your repository.
+3. Go to [giscus.app](https://giscus.app/en), here the values you need to get.
+    - `data-repo` & `data-repo-id`: In "**Repository**" input, fill it.
+    - `data-category` & `data-category-id`: In **Discussion Category** select, click at your desired category. (For example: **General**)
+
+4. In **Enable giscus** section code, copy the `data-repo`, `data-repo-id`, `data-category` and `data-category-id` value, and change the configuration values.
+
+```json
+    "giscus": {
+        "dataRepo": "ligmatv/11micro",
+        "dataRepoID": "R_kgDON1R6_Q",
+        "dataCategory": "Post Comments",
+        "dataCategoryID": "DIC_kwDON1R6_c4CnCYA"
+    }
 ```
 
 ## Favicons

@@ -19,5 +19,11 @@
         { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "star-box-outline" },
         { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "tag-multiple-outline" },
         { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette-outline" }
-    ]
+    ],
+    "giscus": {
+        "dataRepo": "ligmatv/11micro",
+        "dataRepoID": "R_kgDON1R6_Q",
+        "dataCategory": "Post Comments",
+        "dataCategoryID": "DIC_kwDON1R6_c4CnCYA"
+    }
 }

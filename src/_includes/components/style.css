@@ -32,7 +32,7 @@ table {
     overflow-x: auto;
 }
 
-:is(i:not(nav>a>i), svg) {
+:is(i:not(nav:is(.left, .bottom)>a>i), svg) {
     border-radius: 0 !important;
 }
 

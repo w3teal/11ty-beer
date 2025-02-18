@@ -4,25 +4,46 @@ title: My Rad Blog
 description: This website is just for demoing a template powered by 11ty.
 date: 2016-01-01
 ---
-
-{% include "components/post-action.njk" %}
-
 <div class="space"></div>
 
-<h1>{{ title }}</h1>
-<p class="date">{{ date | date }} - by {{ site.author }} </p>
-<p class="no-margin">{{ description }}</p>
-<nav class="gap-sm">
-    {% for tag in tags %}
-    {% if "posts" not in tag %}
-    <a class="chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
-    {% endif %}
-    {% endfor %}
-</nav>
+<header class="large-padding round" style="overflow: visible;">
+        <div>
+            <h1 class="vertical-margin small-margin">{{ title }}</h1>
+            <div class="description">{{ description }}</div>
+        </div>
+        <div class="max"></div>
+        <nav style="overflow: visible;">
+            <div>
+                <div class="date">{{ date | date }} - by {{ site.author }} </div>
+                <nav class="top-margin small-margin">
+                    {% for tag in tags %}
+                    {% if "posts" not in tag %}
+                    <a class="chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
+                    {% endif %}
+                    {% endfor %}
+                </nav>
+            </div>
+            <div class="max"></div>
+            <nav class="no-space post-action">
+                <a href="javascript:ui('#dialog-comments');" class="circle large button transparent link" aria-describedby="_tooltip-comments">
+                    <i>{% icon "mdi:comment-multiple-outline" %}</i>
+                    <div class="tooltip bottom" id="_tooltip-comments">View comments</div>
+                </a>
+                <hr class="vertical horizontal-margin small-margin">
+                <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-describedby="_tooltip-source">
+                    <i>{% icon "mdi:file-eye-outline" %}</i>
+                    <div class="tooltip bottom" id="_tooltip-source">View source of this page</div>
+                </a>
+                <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-describedby="_tooltip-edit">
+                    <i>{% icon "mdi:file-edit-outline" %}</i>
+                    <div class="tooltip bottom" id="_tooltip-edit">Edit this page</div>
+                </a>
+            </nav>
+        </nav>
+</header>
 
-<div class="large-space"></div>
-<hr>
-
-<article class="post transparent">
+<article class="post transparent no-margin">
     {{ content | safe }}
 </article>
+
+{% include "components/dialog-comments.njk" %}
