@@ -23,7 +23,7 @@
     "url": "https://github.com/LIGMATV/11ty-beer/issues"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@mdi/svg": "^7.4.47",
     "beercss": "^3.8.0",
