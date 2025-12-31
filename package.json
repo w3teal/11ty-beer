@@ -23,17 +23,21 @@
     "url": "https://github.com/LIGMATV/11ty-beer/issues"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@mdi/svg": "^7.4.47",
-    "beercss": "^3.8.0",
-    "eleventy-plugin-icons": "^4.5.1",
-    "luxon": "^3.5.0",
+    "@pagefind/modular-ui": "^1.4.0",
+    "@uncenter/eleventy-plugin-toc": "^1.0.3",
+    "beercss": "^3.13.1",
+    "eleventy-plugin-icons": "^4.5.7",
+    "feather-icons": "^4.29.2",
+    "html-minifier-terser": "^7.2.0",
+    "line-md": "^2.0.8",
+    "lucide-static": "^0.562.0",
+    "luxon": "^3.7.2",
     "markdown-it": "^14.1.0",
     "material-dynamic-colors": "^1.1.2",
-    "simple-icons": "^14.2.0"
-  },
-  "devDependencies": {
-    "@sherby/eleventy-plugin-files-minifier": "^1.1.1"
+    "pagefind": "^1.4.0",
+    "simple-icons": "^16.3.0"
   }
 }

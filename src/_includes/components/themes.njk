@@ -1,20 +1,21 @@
-<dialog class="small left" id="dialog-themes">
+<div class="overlay transparent"></div>
+<dialog id="dialog-themes">
     <header class="fixed">
         <nav>
             <div class="max">
                 <h5>Themes</h5>
             </div>
             <button class="circle border large" onclick="mode()">
-                <i class="dark large">{% icon "mdi:weather-night" %}</i>
-                <i class="light large">{% icon "mdi:weather-sunny" %}</i>
+                <i class="dark">{% icon "lucide:moon" %}</i>
+                <i class="light">{% icon "lucide:sun" %}</i>
                 <div class="tooltip bottom">Toggle theme</div>
             </button>
             <button class="circle transparent" data-ui="#dialog-themes">
-                <i>{% icon "mdi:close" %}</i>
+                <i>{% icon "lucide:x" %}</i>
             </button>
         </nav>
     </header>
-    <div>
+    <div class="top-padding">
         <nav class="wrap">
             <button class="circle small red" onclick="theme('#f44336')"></button>
             <button class="circle small pink" onclick="theme('#e91e63')"></button>
@@ -40,7 +41,7 @@
         </nav>
         <nav>
             <button class="small-round max default-theme" style="background-color: {{ site.theme }};" onclick="theme('{{ site.theme }}')">
-                <i>{% icon "mdi:restore" %}</i>
+                <i>{% icon "lucide:rotate-ccw" %}</i>
                 <span>Use default theme</span>
             </button>
         </nav>

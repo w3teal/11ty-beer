@@ -3,6 +3,7 @@ permalink: /tags/index.html
 layout: layouts/default.njk
 title: "All tags"
 description: All the tags i used for the posts in this website.
+pagefind_ignore: true
 ---
 
 
@@ -13,9 +14,9 @@ description: All the tags i used for the posts in this website.
 <article class="no-padding" style="overflow: hidden;">
   {% for tag in collections.tagsList %}
     <a class="row wave padding" href="/tags/{{ tag | slug }}/">
-      <i>{% icon "mdi:pound" %}</i>
+      <i>{% icon "lucide:hash" %}</i>
       <div class="max">
-        <h6 class="small">{{ tag }}</h6>
+        <h6>{{ tag }}</h6>
       </div>
     </a>
     <hr>

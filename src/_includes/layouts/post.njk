@@ -1,49 +1,49 @@
 ---
 layout: layouts/default.njk
-title: My Rad Blog
-description: This website is just for demoing a template powered by 11ty.
-date: 2016-01-01
 ---
 <div class="space"></div>
 
-<header class="large-padding round" style="overflow: visible;">
-        <div>
-            <h1 class="vertical-margin small-margin">{{ title }}</h1>
-            <div class="description">{{ description }}</div>
-        </div>
-        <div class="max"></div>
-        <nav style="overflow: visible;">
-            <div>
-                <div class="date">{{ date | date }} - by {{ site.author }} </div>
-                <nav class="top-margin small-margin">
-                    {% for tag in tags %}
-                    {% if "posts" not in tag %}
-                    <a class="chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
-                    {% endif %}
-                    {% endfor %}
-                </nav>
-            </div>
-            <div class="max"></div>
-            <nav class="no-space post-action">
-                <a href="javascript:ui('#dialog-comments');" class="circle large button transparent link" aria-describedby="_tooltip-comments">
-                    <i>{% icon "mdi:comment-multiple-outline" %}</i>
-                    <div class="tooltip bottom" id="_tooltip-comments">View comments</div>
-                </a>
-                <hr class="vertical horizontal-margin small-margin">
-                <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-describedby="_tooltip-source">
-                    <i>{% icon "mdi:file-eye-outline" %}</i>
-                    <div class="tooltip bottom" id="_tooltip-source">View source of this page</div>
-                </a>
-                <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-describedby="_tooltip-edit">
-                    <i>{% icon "mdi:file-edit-outline" %}</i>
-                    <div class="tooltip bottom" id="_tooltip-edit">Edit this page</div>
-                </a>
-            </nav>
+<header class="large-padding round surface post-header" style="overflow: visible;">
+    <div>
+        <h1 data-pagefind-meta="title" class="link vertical-margin small-margin">{{ title }}</h1>
+        <p class="date" data-pagefind-ignore> 
+            Published on <span data-pagefind-meta="date[datetime]" datetime="{{ date | readableDate }}">{{ date | readableDate }}</span> 
+            {% if lastUpdated %}
+            · <span>Updated on {{ lastUpdated | readableDate }}</span>
+            {% endif %}
+            · <span>by {{ site.author }}</span> 
+        </p>
+        <p class="no-margin">{{ description }}</p>
+    </div>
+    <nav class="no-margin">
+        <nav class="scroll max tiny-space" data-pagefind-ignore>
+            {% for tag in tags %}
+            {% if "posts" not in tag %}
+            <a class="button border no-round" href="/tags/{{ tag }}/">#{{ tag }}</a>
+            {% endif %}
+            {% endfor %}
         </nav>
+        <nav class="no-space post-action">
+            <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-label="View source of this page">
+                <i>{% icon "lucide:file-braces" %}</i>
+                <div class="tooltip bottom">View source of this page</div>
+            </a>
+            <a href="https://github.com/{{ site.ghRepo }}/commits/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-label="Edit this page">
+                <i>{% icon "lucide:file-clock" %}</i>
+                <div class="tooltip bottom">View history of this page</div>
+            </a>
+            <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-label="Edit this page">
+                <i>{% icon "lucide:file-pen" %}</i>
+                <div class="tooltip bottom">Edit this page</div>
+            </a>
+        </nav>
+    </nav>
 </header>
 
-<article class="post transparent no-margin">
+{% include "components/post-buttons.njk" %}
+
+<article class="post transparent no-padding">
     {{ content | safe }}
 </article>
 
-{% include "components/dialog-comments.njk" %}
+{{ content | toc | safe }}

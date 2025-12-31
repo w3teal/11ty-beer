@@ -30,8 +30,17 @@ tags:
 ---
 ```
 
+If you updating the post in a different date, you can add `lastUpdated` below `date` in the frontmatter. For example:
+
+```yaml
+...
+date: 2024-01-31
+lastUpdated: 2025-12-31
+...
+```
+
 ## Start writing
 
-Now, you can start writing an markdown content after the frontmatter are ready. If you not sure how to writing in Markdown (that's the most common lesson), you can learn at [Markdown Guide website](https://www.markdownguide.org/basic-syntax/) or in our [Markdown Test Page](https://github.com/LIGMATV/11ty-beer/blob/main/src/posts/markdown-test-page.md?plain=1) code.
+Now, you can start writing an markdown content after the frontmatter are ready. If you not sure how to writing in Markdown (that's the most common lesson), you can learn at [Markdown Guide website](https://www.markdownguide.org/basic-syntax/) or in our [Markdown Test Page](https://github.com/w3teal/11ty-beer/blob/main/src/posts/markdown-test-page.md?plain=1) code.
 
 If you want to learn more about exclusive shortcodes that you can use in 11ty Beer, visit the [Extras post](/posts/extras/).

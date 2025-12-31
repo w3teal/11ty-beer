@@ -6,24 +6,64 @@ title: "My home page"
 
 <div class="large-space"></div>
 
-<p>11ty Beer, powered by Eleventy v3.0.0.</p>
-<h1>Blogging in 11ty has never been so easy.</h1>
-<p>Simply set your configuration and start writing posts in Markdown without hassle.</p>
-<nav class="no-space">
-    <a class="button" href="/posts/getting-started">Get started <span class="sr-only">Tutorial on how to use it with Terminal.</span> </a>
-    <a class="button transparent" href="/posts/configuration">Learn more <span class="sr-only">Makes your website yours with the customizable configuration.</span></a>
-    <a class="button transparent" href="https://github.com/LIGMATV/11ty-beer"><i>{% icon "si:github" %}</i>GitHub <span class="sr-only">View the source code at GitHub.</span></a>
-</nav>
+<div class="hero grid">
 
-<div class="large-space"></div>
+    <div class="s12 m12 l6 middle-align center-align padding">
+        <img src="{{ site.hero.image.src }}" width="100%" height="100%" fetchpriority="high"
+            alt="{{ site.hero.image.alt }}">
+    </div>
 
-<nav class="no-space">
-    <a class="button border left-round max extra" href="javascript:ui('#dialog-posts');">
-        <i>{% icon "mdi:star-box-outline" %}</i>
-        <span>Read my posts</span>
+    <div class="s12 m12 l6">
+
+        <p>{{ site.hero.name }}</p>
+        <h1>{{ site.hero.title }}</h1>
+        <p>{{ site.hero.description }}</p>
+
+        <div class="space"></div>
+
+        <nav class="no-space">
+            {% for btn in site.hero.buttons %}
+            <a class="button {{ btn.extraClass }}" href="{{ btn.url }}">
+                {% if btn.icon %}
+                <i>{% icon btn.icon %}</i>
+                {% endif %}
+                {{ btn.text }}
+                {% if btn.sr %}
+                <span class="sr-only">{{ btn.sr }}</span>
+                {% endif %}
+            </a>
+            {% endfor %}
+        </nav>
+
+    </div>
+
+</div>
+
+
+<div class="features wrap center-align">
+
+    <ul class="list wrap medium-space">
+        {% for item in site.features.items %}
+        <li class="
+          {% if loop.first %}top-round{% endif %}
+          {% if loop.last %}bottom-round{% endif %}
+        ">
+            <i>{% icon item.icon %}</i>
+            <div class="max">
+                <h6 class="small">{{ item.title }}</h6>
+                <div class="helper">{{ item.helper }}</div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% if site.features.button.enabled %}
+    <div class="space"></div>
+
+    <a class="button responsive mesh extra no-margin" href="{{ site.features.button.url }}">
+        <i>{% icon site.features.button.icon %}</i>
+        <span>{{ site.features.button.text }}</span>
     </a>
-    <a class="button border right-round max extra" href="javascript:ui('#dialog-tags');">
-        <i>{% icon "mdi:tag-multiple-outline" %}</i>
-        <span>Read by the tag</span>
-    </a>
-</nav>
+    {% endif %}
+
+</div>

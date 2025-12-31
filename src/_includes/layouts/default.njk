@@ -2,11 +2,25 @@
 layout: layouts/base.njk
 ---
 
+
+
+{% include "components/toolbar.njk" %}
 {% include "components/menu.njk" %}
-<main class="responsive">
+<main class="responsive main" 
+{% if pagefind_ignore %}
+  data-pagefind-ignore="all"
+{% else %}
+  data-pagefind-body
+{% endif %}
+>
   {{ content | safe }}
+
+{% include "components/footer.njk" %}
 </main>
+
+{% if site.giscus.enabled %}
+  {% include "components/dialog-comments.njk" %}
+{% endif %}
 {% include "components/dialog-posts.njk" %}
 {% include "components/dialog-tags.njk" %}
 {% include "components/themes.njk" %}
-{% include "components/footer.njk" %}

@@ -1,0 +1,68 @@
+<header class="fixed transparent padding min">
+
+    <nav class="center-align tiny-space">
+
+        <nav class="toolbar transparent">
+
+            <nav class="no-space wrap">
+                {% include "components/profile.njk" %}
+
+                {% for item in site.toolbarItems %}
+
+                {% if item.type == "menu" %}
+                <button class="circle transparent" aria-label="{{ item.name }}">
+                    <i>{% icon item.icon %}</i>
+                    <div class="tooltip right">{{ item.name }}</div>
+
+                    <menu class="no-wrap">
+                        {% for sub in item.items %}
+                        <li>
+                            {% if sub.href %}
+                            <a href="{{ sub.href }}">{{ sub.label }}</a>
+                            {% else %}
+                            <a>{{ sub.label }}</a>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </menu>
+                </button>
+                {% endif %}
+
+                {% if item.type == "button" %}
+                <button class="circle transparent" onclick="{{ item.onClick }}" aria-label="{{ item.name }}">
+                    <i>{% icon item.icon %}</i>
+                    <div class="tooltip bottom">{{ item.name }}</div>
+                </button>
+                {% endif %}
+
+                {% if item.type == "link" %}
+                <a class="button circle transparent" href="{{ item.href }}" aria-label="{{ item.name }}">
+                    <i>{% icon item.icon %}</i>
+                    <div class="tooltip bottom">{{ item.name }}</div>
+                </a>
+                {% endif %}
+
+                {% if item.type == "themeToggle" %}
+                <button class="circle transparent" onclick="{{ item.onClick }}" aria-label="{{ item.name }}">
+                    <i class="dark">{% icon item.iconDark %}</i>
+                    <i class="light">{% icon item.iconLight %}</i>
+                    <div class="tooltip bottom">{{ item.name }}</div>
+                </button>
+                {% endif %}
+
+                {% endfor %}
+
+            </nav>
+
+        </nav>
+
+        <button class="extra round circle elevate" data-ui="#dialog-comments" aria-label="Comments">
+            <i>{% icon "lucide:messages-square" %}</i>
+            <div class="tooltip bottom">Comments</div>
+        </a>
+
+    </nav>
+
+    {% include "components/search.njk" %}
+
+</header>

@@ -1,27 +1,30 @@
-<dialog id="dialog-tags" class="left no-padding">
-    <nav class="drawer">
-        <header>
-            <nav>
-                <div class="row max truncate">
-                    {% include "components/profile.njk" %}
-                    <h6 class="max">All tags</h6>
-                </div>
-                <div class="row">
-                    <a class="button circle large border" href="/tags/" target="_blank">
-                        <i>{% icon "mdi:open-in-new" %}</i>
-                        <div class="tooltip bottom">Open in New Tab</div>
-                    </a>
-                    <button class="transparent circle" data-ui="#dialog-tags">
-                        <i>{% icon "mdi:close" %}</i>
-                    </button>
-                </div>
-            </nav>
-        </header>
+<div class="overlay blur"></div>
+<dialog id="dialog-tags" class="left">
+    <header class="fixed">
+        <nav class="padding">
+            <div class="row max truncate">
+                <h6 class="max">All tags</h6>
+            </div>
+            <div class="row no-space">
+                <a class="button circle large border" href="/tags/" target="_blank">
+                    <i>{% icon "lucide:external-link" %}</i>
+                    <div class="tooltip bottom">Open in New Tab</div>
+                </a>
+                <button class="transparent circle" data-ui="#dialog-tags">
+                    <i>{% icon "lucide:x" %}</i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <ul class="list">
         {% for tag in collections.tagsList %}
-        <a href="/tags/{{ tag | slug }}/" {% if page.url == '/tags/' ~ (tag | slug) ~ '/' %} class="active"{% endif %}>
-            <i>{% icon "mdi:pound" %}</i>
-            {{ tag }}
-        </a>        
+        <li class="wave round{% if page.url == '/tags/' ~ (tag | slug) ~ '/' %} fill{% endif %}">
+            <a data-ui="#dialog-tags" href="/tags/{{ tag | slug }}/">
+                <i>{% icon "lucide:hash" %}</i>
+                {{ tag }}
+            </a>       
+        </li> 
         {% endfor %}
-      </nav>
+    </ul>
 </dialog>
+

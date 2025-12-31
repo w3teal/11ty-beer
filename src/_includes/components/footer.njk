@@ -5,6 +5,7 @@
     <a class="name" href="{{ site.url }}">{{ site.title }}</a>
     <p class="no-margin">{{ site.description }}</p>
   </div>
+
   <div class="s12 m4 l4 row right-align">
     {% for item in site.socialItems %}
     <a class="button circle transparent" href="{{ item.url }}" aria-label="{{ item.title }}" {% if item.rel %}rel="{{ item.rel }}"{% endif %}>
@@ -13,5 +14,5 @@
     </a>
     {% endfor %}
   </div>
-
+  
 </footer>

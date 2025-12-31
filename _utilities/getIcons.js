@@ -10,6 +10,14 @@ function getIcons(eleventyConfig) {
             {
                 name: 'mdi',
                 path: 'node_modules/@mdi/svg/svg'
+            },
+            {
+                name: 'lucide',
+                path: 'node_modules/lucide-static/icons'
+            },
+            {
+                name: 'feather',
+                path: 'node_modules/feather-icons/dist/icons'
             }
         ],
         icon: {
@@ -26,14 +34,14 @@ function getIcons(eleventyConfig) {
         sprite: {
             shortcode: 'spriteSheet',
             attributes: {
-                class: 'sprite-sheet',
-                'aria-hidden': 'true',
-                xmlns: 'http://www.w3.org/2000/svg',
+            class: 'sprite-sheet',
+            'aria-hidden': 'true',
+            xmlns: 'http://www.w3.org/2000/svg',
             },
             extraIcons: {
-                all: false,
-                sources: [],
-                icons: [],
+            all: false,
+            sources: [],
+            icons: [],
             },
             writeFile: false,
         },

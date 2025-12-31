@@ -42,16 +42,16 @@ code[class*="language-"]::mozselection {
   }
 }
 pre[class*="language-"] {
-  padding: 1em;
   margin: .5em 0;
   overflow: auto;
-  background: var(--surface-container);
+  line-height: normal;
+  background: var(--secondary-container);
 }
 :not(pre) > code[class*="language-"] {
   padding: .1em .3em;
   border-radius: .3em;
   color: #db4c69;
-  background: var(--surface-container);
+  background: var(--secondary-container);
 }
 /*********************************************************
 * Tokens
@@ -65,7 +65,7 @@ pre[class*="language-"] {
 .token.cdata,
 .token.punctuation,
 .token.function {
-  color: var(--outline);
+  color: var(--on-primary-container);
 }
 :is(.token.property,
 .token.tag,
@@ -93,12 +93,12 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string {
   color: #a67f59;
-  background: var(--surface-container);
+  background: var(--secondary-container);
 }
 .token.regex,
 .token.important,
 .token.variable {
-  color: #2f3033;
+  color: var(--on-surface);
 }
 .token.important,
 .token.bold {

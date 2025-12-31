@@ -2,41 +2,39 @@
 
 An 11ty blog template with Material Design, PWA and minified files that simply works.
 
-![Homepage](src/public/img/homepage.webp)
-![Posts dialog](src/public/img/dialog-posts.webp)
-![Tags dialog](src/public/img/dialog-tags.webp)
-![Themes](src/public/img/themes.webp)
+![Homepage](src/public/img/preview.png)
 
 ---
 
-## Install
+## Docs
 
-### With terminal
+Docs are provided in form of a [live demo](https://11ty-beer.vercel.app/).
 
-1. Clone this repository: `git clone https://github.com/LIGMATV/11ty-beer.git`
-2. Open that directory: `cd 11ty-beer`
-3. Install dependencies: `npm install`
-4. Start development: `npm start`
-5. See your website at http://localhost:8080/
+## Know your rights
 
-### Instant deploy
+This project is under the MIT license:
 
-- If you want to create a repository on GitHub first: **[git.new/11ty-beer](https://git.new/11ty-beer)**
-- **(RECOMMENDED)** If you want to create a repository and automically deploy with Vercel: **[dub.sh/11ty-beer](https://dub.sh/11ty-beer)**
+- **Freedom to Use**: You have the right to use the software for any purpose, whether it's personal, academic, or commercial.
+- **Freedom to Modify**: You can modify the source code of the software to suit your needs or preferences.
+- **Freedom to Distribute**: You have the right to distribute the software, whether in its original form or modified, to others.
+- **Collaboration**: You can collaborate with others on the software's development and improvement.
+- **No License Compatibility Issues**: You can combine the MIT-licensed software with other software, even if they use different licenses.
+- **No Usage Restrictions**: There are no restrictions on the technologies or fields of use, giving you maximum flexibility.
+- **No Royalties**: You are not required to pay any royalties or fees for using, modifying, or distributing the software.
 
-## Features
+## Contributing guidelines
 
-- Flawless **[simple installment](#install)**.
-- Using **latest and stable** version of Eleventy [(v3.0.0)](https://github.com/11ty/eleventy/releases/tag/v3.0.0).
-- **Consistent pages directory**, root pages in [`/src/pages`](/src/pages) and posts in [`/src/posts/`](/src/posts/).
-- 11ty utilities **neatly arranged** in [`_utilities`](/_utilities), also the [sources](/src).
-- SEO and accesibility focused, bring the **Four-hundos Lighthouse score**. [(Let you test in Pagespeed)](https://pagespeed.web.dev/analysis?url=https%3A%2F%2F11ty-beer.vercel.app%2F)
-- **Easier navigation** with the exclusive modals for posts and tags.
-- Just **[one configuration](/src/_data/site.json)** to go.
-- Included **PWA, sitemap, feeds** and [common SEO things](/src/common/).
-- All that is outside your head, **[SEO metas, icons, open graph, and feeds](/src/_includes/layouts/base.njk#L5-L31)**.
-- Designed **beautiful and professional** with the bold Material Design.
+There are several ways to contribute to this project:
+
+- Reporting issues
+- Discussing potential improvements
+- Contributing code
+- Writing documentation
+- Submitting feature requests
+- Providing feedback
+
+When making any sort of contribution, please make sure to follow [Forgejo's Code of Conduct](https://codeberg.org/forgejo/code-of-conduct). If you don't have the time to read it, just know that all you have to do is be nice, and you'll be just fine.
 
 ---
 
-Built with [11ty](https://github.com/11ty/eleventy/) [`v3.0.0`](https://github.com/LIGMATV/11ty-beer/blob/main/package.json#L26) and [BeerCSS](https://github.com/beercss/beercss) [`3.8.0`](https://github.com/LIGMATV/11ty-beer/blob/main/package.json#L27) 🍻✨
+_Proudly built with [11ty](https://github.com/11ty/eleventy/) and [BeerCSS](https://github.com/beercss/beercss) 🍻✨_ |  _README based on [duckquill](https://codeberg.org/daudix/duckquill)._

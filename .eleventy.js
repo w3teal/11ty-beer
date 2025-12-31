@@ -8,18 +8,22 @@ const tagsListCollection = require("./_utilities/tagsListCollection");
 const filterByTag = require("./_utilities/filterByTag");
 const imageShortcode = require("./_utilities/imageShortcode");
 const getIcons = require("./_utilities/getIcons");
+const pagefindSync = require("./_utilities/pagefindSync");
+const createToc = require("./_utilities/createToc");
 
 module.exports = function (eleventyConfig) {
 
   filesMinifier(eleventyConfig);
   generateSlug(eleventyConfig, slugify);
   syntaxHighlight(eleventyConfig);
-  eleventyConfig.addFilter("date", dateFilter);
+  eleventyConfig.addFilter("readableDate", dateFilter);
   eleventyConfig.addFilter("urlEncode", urlEncode);
   eleventyConfig.addCollection("tagsList", tagsListCollection);
   eleventyConfig.addFilter("filterByTag", filterByTag);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   getIcons(eleventyConfig);
+  pagefindSync(eleventyConfig);
+  createToc(eleventyConfig);
 
   eleventyConfig.addPassthroughCopy({
     "src/public": "/",

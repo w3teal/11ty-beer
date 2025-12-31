@@ -1,41 +1,36 @@
+<div class="overlay blur"></div>
 <dialog id="dialog-posts" class="left large">
     <header class="fixed">
-        <nav>
+        <nav class="padding">
             <div class="row max truncate">
-                {% include "components/profile.njk" %}
                 <h6 class="max">My posts</h6>
             </div>
             <div class="row">
                 <a class="button circle large border" href="/tags/posts/" target="_blank">
-                    <i>{% icon "mdi:open-in-new" %}</i>
+                    <i>{% icon "lucide:external-link" %}</i>
                     <div class="tooltip bottom">Open in New Tab</div>
                 </a>
                 <button class="transparent circle" data-ui="#dialog-posts">
-                    <i>{% icon "mdi:close" %}</i>
+                    <i>{% icon "lucide:x" %}</i>
                 </button>
             </div>
         </nav>
     </header>
-    {% for post in collections.posts | reverse %}
-    <article class="s12 m12 l6{% if page.url == post.url %} secondary-container active{% endif %}">
-        <h2><a class="link" href="{{ post.url }}">{{ post.data.title }}</a></h2>
-        <p class="date">{{ post.date | date }} - by {{ site.author }}</p>
-        <p class="no-margin">{{ post.data.description }}</p>
-        <nav class="wrap">
-            {% for tag in post.data.tags %}
-            {% if "posts" not in tag %}
-            <a class="btn chip" href="/tags/{{ tag }}/">#{{ tag }}</a>
-            {% endif %}
-            {% endfor %}
-        </nav>
-        <nav>
-            <div class="max"></div>
-            <a class="button tonal no-margin" href="{{ post.url }}" {% if page.url == post.url %}disabled{% endif %}>
-                <i>{% icon "mdi:book-arrow-up-outline" %}</i>
-                Read this post
-            </a>
-        </nav>
-    </article>
-    <div class="small-space"></div>
-    {% endfor %}
+    <div class="grid article-list">
+        {% for post in collections.posts | reverse %}
+        <article class="large-padding wave round no-elevate s12 m6 l6 {% if page.url == post.url %}fill{% endif %}">
+            <a href="{{ post.url }}" data-ui="#dialog-posts"></a>
+            <h2 class="primary-text no-margin">{{ post.data.title }}</h2>
+            <p class="date">{{ post.date | readableDate }} · by {{ site.author }}</p>
+            <p class="no-margin">{{ post.data.description }}</p>
+            <nav class="article-tags scroll max tiny-space">
+                {% for tag in post.data.tags %}
+                {% if "posts" not in tag %}
+                <a class="button border no-round" href="/tags/{{ tag }}/">#{{ tag }}</a>
+                {% endif %}
+                {% endfor %}
+            </nav>
+        </article>
+        {% endfor %}
+    </div>
 </dialog>

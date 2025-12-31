@@ -1,60 +1,51 @@
 ---
 title: Getting Started
-description: Start build a 11ty Beer website and deploy it.
+description: Start building an 11ty Beer website and deploy it.
 date: 2024-12-20
+lastUpdated: 2025-12-31
 tags:
  - tutorial
 ---
 
+> This tutorial is intended for beginners, if you think there is an error in the command or word, please contribute.
+
 ## Install
 
-### With terminal
+You needed to have [`git`](https://git-scm.com/install/), [`nodejs`](https://nodejs.org/en/download), and [`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed. You can follow the installation guide in their respective page. Then, run those commands.
 
-1. Clone this repository: `git clone https://github.com/LIGMATV/11ty-beer.git`
-2. Open that directory: `cd 11ty-beer`
-3. Install dependencies: `npm install`
-4. Start development: `npm start`
-5. See your website at http://localhost:8080/
-
-### Instant deploy
-
-- If you want to create a repository on GitHub first: **[git.new/11ty-beer](https://git.new/11ty-beer)**
-- **(RECOMMENDED)** If you want to create a repository and automically deploy with Vercel: **[dub.sh/11ty-beer](https://dub.sh/11ty-beer)**
-
-## Configuration
-
-Check the [configuration post](/posts/configuration/).
-
-## Directory structure
-
-It's simple, anyone gonna love how simple is this starter built.
-
+```sh
+git clone https://github.com/w3teal/11ty-beer ./my-blog
+cd ./my-blog
+npm install
+npm start
 ```
-11ty-beer/
-├── 📂 _site                <-- The website result (gitignored)
-├── 📂 _utilities           <-- 11ty utilities
-├── 📂 node_modules         <-- Package modules (gitignored)
-├── 📂 src/                 <-- Whole source
-│   └── 📂 _data               <-- Global data
-│       └── 📄 site.json       <-- All your configuration here!
-│   └── 📂 _includes           <-- Folder that included
-│       └── 📂 components          <-- Components like dialog is here
-│       └── 📂 layout              <-- Base, default, or post layout
-│   └── 📂 common              <-- Folder for common things, not for touched
-│       └── 📄 manifest.njk         <-- Manifest file (manifest.json)
-│       └── 📄 robots.njk           <-- Robots file (robots.txt)
-│       └── 📄 service-worker.njk   <-- Service worker (sw.js)
-│       └── 📄 sitemap.njk          <-- Sitemap file (sitemap.xml)
-│   └── 📂 pages               <-- The pages in the root
-│       └── 📄 index.njk           <-- Index file
-│       └── 📄 posts.njk           <-- Posts list
-│       └── 📄 tags.njk            <-- Page for all the tags
-│       └── 📄 tags-list.njk       <-- Tags list
-│   └── 📂 posts               <-- The posts
-│       └── 📄 *.md                <-- Your posts file in Markdown
-│       └── 📄 posts.json          <-- Datas for all posts
-│   └── 📂 public              <-- Folder that included to the root
-│       └── 📂 favicon             <-- Favicon and icons
-│       └── 📂 img                 <-- Images to be included on posts/anywhere
-└── 📄 .eleventy.js             <-- Expert configuration
+
+If you wonder how to edit the configuration file or create the markdown files, you needed an code editor like [Visual Studio Code](https://code.visualstudio.com/), and I recommend you to install [Better Nunjucks](https://marketplace.visualstudio.com/items?itemName=ginfuru.better-nunjucks) for `.njk` formatting.
+
+> And then, you can check the [configuration post](/posts/configuration/), and configure it to your liking.  
+> To start writing an new post, you can check the [writing post](/posts/writing/).
+
+## Publish
+
+After done polishing, you should publish it and share to anyone! But, if you still not familiar on how to using `git` in CLI. Here the steps.
+
+You need to have an [GitHub](https://github.com/) account, and then apply your `git` credentials the same as your GitHub account, it will appear in the commit history of the repository.
+
+```sh
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+
+# and you can check what applied...
+git config --list
 ```
+
+Back into the repository directory, we needed to initialize the repository, and publish it by push.
+
+```sh
+git init
+git add .
+git commit -m "i make blahblahblah..."
+git push -u origin main
+```
+
+And to deploy it, you can use [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), or other [deploy services](https://www.11ty.dev/docs/deployment/). And then, simply add the repository into that deploy service

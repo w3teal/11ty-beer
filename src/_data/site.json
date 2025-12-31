@@ -3,27 +3,166 @@
     "lang": "en",
     "title": "11ty Beer Web",
     "shortTitle": "11ty Beer",
-    "author": "LIGMATV",
+    "author": "W3Teal",
     "url": "https://11ty-beer.vercel.app",
     "theme": "#6750a4",
     "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
-    "ghRepo": "LIGMATV/11ty-beer",
+    "ghRepo": "w3teal/11ty-beer",
     "keywords": ["eleventy", "material", "pwa"],
-    "socialItems": [
-        { "title": "Feed", "url": "/feed.xml", "icon": "rss" },
-        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
-        { "title": "Mastodon", "url": "https://mastodon.scot/@l", "icon": "mastodon", "rel": "me" }
+    "socialItems": [{
+            "title": "GitHub",
+            "url": "https://github.com/w3teal/11ty-beer",
+            "icon": "github"
+        },
+        {
+            "title": "Mastodon",
+            "url": "https://fosstodon.org/@w3teal",
+            "icon": "mastodon",
+            "rel": "me"
+        }
     ],
-    "menuItems": [
-        { "title": "Home", "url": "/", "icon": "home-variant-outline" },
-        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "star-box-outline" },
-        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "tag-multiple-outline" },
-        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette-outline" }
+    "menuItems": [{
+            "title": "Home",
+            "url": "/",
+            "icon": "lucide:house"
+        },
+        {
+            "title": "Posts",
+            "url": "javascript:ui('#dialog-posts');",
+            "icon": "lucide:sticky-note"
+        },
+        {
+            "title": "Tags",
+            "url": "javascript:ui('#dialog-tags');",
+            "icon": "lucide:tags"
+        }
+    ],
+    "toolbarItems": [{
+            "name": "Search",
+            "type": "button",
+            "icon": "lucide:search",
+            "onClick": "document.getElementById('pf--wrapper').classList.toggle('active');"
+        },
+        {
+            "name": "Theme",
+            "type": "link",
+            "icon": "lucide:palette",
+            "href": "javascript:ui('#dialog-themes');"
+        },
+        {
+            "name": "Toggle theme",
+            "type": "themeToggle",
+            "iconDark": "lucide:moon",
+            "iconLight": "lucide:sun",
+            "onClick": "mode()"
+        },
+        {
+            "name": "Feed",
+            "type": "menu",
+            "icon": "lucide:rss",
+            "items": [{
+                    "label": "Atom",
+                    "href": "/feed.xml"
+                },
+                {
+                    "label": "JSON",
+                    "href": "/feed.json"
+                }
+            ]
+        }
     ],
     "giscus": {
-        "dataRepo": "ligmatv/11micro",
-        "dataRepoID": "R_kgDON1R6_Q",
-        "dataCategory": "Post Comments",
-        "dataCategoryID": "DIC_kwDON1R6_c4CnCYA"
+        "enabled": true,
+        "dataRepo": "w3teal/11ty-beer",
+        "dataRepoID": "R_kgDONgFKcg",
+        "dataCategory": "Website Comments",
+        "dataCategoryID": "DIC_kwDONgFKcs4C0Yci"
+    },
+    "hero": {
+        "name": "11ty Beer, powered by Eleventy v3.1.2.",
+        "title": "Blogging in 11ty has never been so easy.",
+        "description": "Simply set your configuration and start writing posts in Markdown without hassle.",
+        "image": {
+            "src": "/11ty-beer-hero.svg",
+            "alt": "hero image"
+        },
+        "buttons": [{
+                "text": "Get started",
+                "url": "/posts/getting-started",
+                "sr": "Tutorial on how to use it with Terminal."
+            },
+            {
+                "text": "Learn more",
+                "url": "/posts/configuration",
+                "extraClass": "transparent",
+                "sr": "Makes your website yours with the customizable configuration."
+            },
+            {
+                "text": "GitHub",
+                "url": "https://github.com/w3teal/11ty-beer",
+                "extraClass": "transparent",
+                "icon": "si:github",
+                "sr": "View the source code at GitHub."
+            }
+        ]
+    },
+    "features": {
+        "items": [{
+                "icon": "lucide:hand-metal",
+                "title": "Flawless simple installment",
+                "helper": "npm install. npm start. Deploy to Vercel."
+            },
+            {
+                "icon": "lucide:file-sliders",
+                "title": "Just one configuration to go",
+                "helper": "All in your hand (src/_data/site.json), stress-free."
+            },
+            {
+                "icon": "lucide:panel-right-close",
+                "title": "Easier navigation",
+                "helper": "Modals for posts and tags."
+            },
+            {
+                "icon": "lucide:search",
+                "title": "Search functionality",
+                "helper": "Finding nemo without further steps."
+            },
+            {
+                "icon": "lucide:messages-square",
+                "title": "Comments (Giscus powered)",
+                "helper": "Talk and discuss straight here."
+            },
+            {
+                "icon": "lucide:utility-pole",
+                "title": "11ty utilities neatly arranged",
+                "helper": "Find them in _utilities, also the sources."
+            },
+            {
+                "icon": "lucide:smartphone",
+                "title": "Included batteries",
+                "helper": "PWA, sitemap, feeds and common SEO things."
+            },
+            {
+                "icon": "lucide:accessibility",
+                "title": "SEO and accessibility focused",
+                "helper": "Make all kind of things can read your write."
+            },
+            {
+                "icon": "lucide:brain-cog",
+                "title": "All that is outside your head",
+                "helper": "SEO metas, icons, open graph, and feeds straight in head."
+            },
+            {
+                "icon": "lucide:component",
+                "title": "Designed beautiful and professional",
+                "helper": "With the bold Material Design with blurry sprinkles."
+            }
+        ],
+        "button": {
+            "enabled": true,
+            "text": "Get started",
+            "icon": "lucide:book-up",
+            "url": "/posts/getting-started"
+        }
     }
 }

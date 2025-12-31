@@ -1,0 +1,29 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const instance = new PagefindModularUI.Instance({
+      bundlePath: "/pagefind/"
+    });
+
+    instance.add(new PagefindModularUI.Input({
+      containerElement: "#pf--input" 
+    }));
+
+    instance.add(new PagefindModularUI.ResultList({
+      containerElement: "#pf--search-results",
+      resultTemplate: (result) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <a href="${result.url}">
+            <h5 class="link top-padding">${result.meta.title}</h5>
+          </a>
+          <p class="date">${result.meta.date || ""}</p>
+          <p class="tiny-line secondary-text">${result.excerpt || ""}</p>
+          
+        `;
+        return li;
+      }
+    }));
+
+  });
+</script>

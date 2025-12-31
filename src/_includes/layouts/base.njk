@@ -30,17 +30,17 @@
   <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
   <link rel="alternate" href="/feed.json" type="application/json" title="{{ site.title }}">
 
-  <!-- Modules -->
+  <!-- Beer CSS -->
   <link rel="stylesheet" href="/modules/beercss/beer.min.css">
   <script type="module" src="/modules/beercss/beer.min.js"></script>
   <script type="module" src="/modules/material-dynamic-colors/material-dynamic-colors.min.js"></script>
 
+  <!-- Pagefind -->
+  <link rel="stylesheet" href="/pagefind/pagefind-modular-ui.css">
+  <script src="/pagefind/pagefind-modular-ui.js"></script>
+
   <!-- Inline styles, ignore the error -->
   <style>
-    @font-face {
-      font-family: "Material Symbols Outlined";
-      src: local("Arial");
-    }
     {% include "components/style.css" %}
     {% include "components/prism-theme.css" %}
   </style>
@@ -51,5 +51,7 @@
 </body>
 
 {% include "components/register-sw.njk" %}
+{% include "components/register-pagefind.njk" %}
+{% include "components/copy-code.njk" %}
 
 </html>

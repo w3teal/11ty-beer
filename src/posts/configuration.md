@@ -2,48 +2,18 @@
 title: Configuration
 description: Makes your website yours with the customizable configuration.
 date: 2024-12-21
+lastUpdated: 2025-12-31
 tags:
  - tutorial
  - config
  - theme
 ---
 
-Already getting started your post? It's time to **learn more** to makes your website yours with the customizable configuration.
+Already getting started your blog? It's time to **learn more** to makes your website yours with the customizable configuration.
 
 Here's some customization to make your site more yours.  
-Firstly, you can open the `_data/site.json` file, you will find some configuration here.
+Firstly, you can open the `src/_data/site.json` file, you will find some configuration here.
 
-```json
-{
-    "locale": "en_US",
-    "lang": "en",
-    "title": "11ty Beer Web",
-    "shortTitle": "11ty Beer",
-    "author": "LIGMATV",
-    "url": "https://11ty-beer.vercel.app",
-    "theme": "#6750a4",
-    "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
-    "ghRepo": "LIGMATV/11ty-beer",
-    "keywords": ["eleventy", "material", "pwa"],
-    "socialItems": [
-        { "title": "Feed", "url": "/feed.xml", "icon": "rss" },
-        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
-        { "title": "Mastodon", "url": "https://mastodon.scot/@l", "icon": "mastodon", "rel": "me" }
-    ],
-    "menuItems": [
-        { "title": "Home", "url": "/", "icon": "home-variant-outline" },
-        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "star-box-outline" },
-        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "tag-multiple-outline" },
-        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette-outline" }
-    ],
-    "giscus": {
-        "dataRepo": "ligmatv/11micro",
-        "dataRepoID": "R_kgDON1R6_Q",
-        "dataCategory": "Post Comments",
-        "dataCategoryID": "DIC_kwDON1R6_c4CnCYA"
-    }
-}
-```
 
 ## Locale & Language
 
@@ -59,8 +29,8 @@ The locale and language of your website. Native locale is optional.
 The title or name for your website. Short title is used for your PWA's app name.
 
 ```json
-    "title": "11ty GMX Web",
-    "shortTitle": "11ty GMX",
+    "title": "11ty Beer Web",
+    "shortTitle": "11ty Beer",
 ```
 
 ## Bio
@@ -68,10 +38,10 @@ The title or name for your website. Short title is used for your PWA's app name.
 ### Author
 
 Who's the author? Ghost? You can change it by changes the `author` string.  
-Example of the usage: `<meta name="author" content="LIGMATV">`
+Example of the usage: `<meta name="author" content="W3Teal">`
 
 ```json
-    "author": "LIGMATV",
+    "author": "W3Teal",
 ```
 
 ### Url
@@ -90,13 +60,13 @@ Default theme for BeerCSS
     "theme": "#6750a4",
 ```
 
-### Description
+## Description
 
 The default description if the `description` string in the frontmatter is not filled.  
-Example of the usage: `<meta name="description" content="Welcome to my blog, powered by 11ty & GMX.css.">`
+Example of the usage: `<meta name="description" content="Welcome to my blog, powered by 11ty & BeerCSS.">`
 
 ```json
-    "description": "Welcome to my blog, powered by 11ty & GMX.css.",
+    "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
 ```
 
 ## GitHub Repository
@@ -105,7 +75,7 @@ The github repository which used for hosting the website code.
 Example of the usage: The "View source of this page" and "Edit this page" button in posts.
 
 ```json
-    "ghRepo": "LIGMATV/11ty-beer",
+    "ghRepo": "w3teal/11ty-beer",
 ```
 
 ## Keywords
@@ -126,32 +96,97 @@ Used in the footer. There's a 3 strings for every arrays you need to fill.
 4. `rel`: (Optional) The relationship between the website and social media. Useful for [Fediverse verification](https://docs.joinmastodon.org/user/profile/#verification).
 
 ```json
-    "socialItems": [
-        { "title": "Feed", "url": "/feed.xml", "icon": "rss" },
-        { "title": "GitHub", "url": "https://github.com/LIGMATV/11ty-beer", "icon": "github" },
-        { "title": "Mastodon", "url": "https://techhub.social/@ligmatv", "icon": "mastodon", "rel": "me" }
+    "socialItems": [{
+            "title": "GitHub",
+            "url": "https://github.com/w3teal/11ty-beer",
+            "icon": "github"
+        },
+        {
+            "title": "Mastodon",
+            "url": "https://fosstodon.org/@w3teal",
+            "icon": "mastodon",
+            "rel": "me"
+        }
     ],
 ```
 
 ## Menu items
 
-Used as lists in sidebar menu. There are 3 strings for every arrays you need to fill.
+Used as lists in sidebar menu in the left.
 1. `title`: The title of the page.
 2. `url`: The link to the page. For triggering with [`data-ui`](https://github.com/beercss/beercss/blob/main/docs/JAVASCRIPT.md#the-trigger-of-elements), use `javascript:ui('...')`.
-3. `icon`: The icon that is presenting the page. You can find the icon names in [Pictogrammer's Material Design Icons](https://pictogrammers.com/library/mdi/).
+3. `icon`: The icon that is presenting the element. You can use `si` ([Simple Icons](https://simpleicons.org/)), `mdi` ([Material Design Icons](https://pictogrammers.com/library/mdi/)), [`lucide`](https://lucide.dev/icons/), [`feather`](https://feathericons.com/). You can find the icons in their respective website.
 
 ```json
-    "menuItems": [
-        { "title": "Home", "url": "/", "icon": "home-variant-outline" },
-        { "title": "Posts", "url": "javascript:ui('#dialog-posts');", "icon": "star-box-outline" },
-        { "title": "Tags", "url": "javascript:ui('#dialog-tags');", "icon": "tag-multiple-outline" },
-        { "title": "Theme", "url": "javascript:ui('#dialog-themes');", "icon": "palette-outline" }
-    ]
+    "menuItems": [{
+            "title": "Home",
+            "url": "/",
+            "icon": "lucide:house"
+        },
+        {
+            "title": "Posts",
+            "url": "javascript:ui('#dialog-posts');",
+            "icon": "lucide:sticky-note"
+        },
+        {
+            "title": "Tags",
+            "url": "javascript:ui('#dialog-tags');",
+            "icon": "lucide:tags"
+        }
+    ],
+```
+
+## Toolbar
+
+You can see it at the top, with big Giscus comments button if enabled.
+
+1. `name`: The name of the element, showed as tooltip.
+2. `type`: There is `button`, `link`, `themeToggle`, and `menu`  
+You can use `items` array with `label` and `href` inside to make the menu elements.
+3. `icon`: The icon that is presenting the element. You can use `si` ([Simple Icons](https://simpleicons.org/)), `mdi` ([Material Design Icons](https://pictogrammers.com/library/mdi/)), [`lucide`](https://lucide.dev/icons/), [`feather`](https://feathericons.com/). You can find the icons in their respective website.  If you use `themeToggle` type, the options will be `iconDark` and `iconLight`.
+4. `onclick`/`href`: What the element will be used for after clicked. (Not needed with `menu` type).
+
+```json
+    "toolbarItems": [{
+            "name": "Search",
+            "type": "button",
+            "icon": "lucide:search",
+            "onClick": "document.getElementById('pf--wrapper').classList.toggle('active');"
+        },
+        {
+            "name": "Theme",
+            "type": "link",
+            "icon": "lucide:palette",
+            "href": "javascript:ui('#dialog-themes');"
+        },
+        {
+            "name": "Toggle theme",
+            "type": "themeToggle",
+            "iconDark": "lucide:moon",
+            "iconLight": "lucide:sun",
+            "onClick": "mode()"
+        },
+        {
+            "name": "Feed",
+            "type": "menu",
+            "icon": "lucide:rss",
+            "items": [{
+                    "label": "Atom",
+                    "href": "/feed.xml"
+                },
+                {
+                    "label": "JSON",
+                    "href": "/feed.json"
+                }
+            ]
+        }
+    ],
 ```
 
 ## Comments (Giscus)
 
-Add comments feature for every posts.
+Add comments feature for every posts.  
+If you don't use this, you can delete the `"enabled": true,` part in the configuration.
 1. In the repository where your 11ty Beer used, enable the Discussion feature.  
     You can [learn more at GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository).
 2. [Install Giscus](https://github.com/apps/giscus) to your repository.
@@ -163,10 +198,103 @@ Add comments feature for every posts.
 
 ```json
     "giscus": {
-        "dataRepo": "ligmatv/11micro",
-        "dataRepoID": "R_kgDON1R6_Q",
-        "dataCategory": "Post Comments",
-        "dataCategoryID": "DIC_kwDON1R6_c4CnCYA"
+        "enabled": true,
+        "dataRepo": "w3teal/11ty-beer",
+        "dataRepoID": "R_kgDONgFKcg",
+        "dataCategory": "Website Comments",
+        "dataCategoryID": "DIC_kwDONgFKcs4C0Yci"
+    },
+```
+
+## Homepage
+
+### Hero
+
+1. `name`: Simple text that appear under the title, can be the name of website, with an simple companion text.
+2. `title`: An big text/heading that centered in the hero.
+3. `description`: Longer text that appear below the title, for an longer information/tagline.
+4. `image`: The hero image, with the arrays like `src` as the image source and `alt` as the alternative text.
+5. `buttons`
+    1. `text`: The text that shown in the button.
+    2. `url`: What the button will be redirect to for after clicked.
+    3. `sr`: An screen-reader only text that clarify about the button action.
+    4. `extraClass`: An extra classes that added to the button, e.g. `transparent`, `fill`, etc.
+    5. `icon` (optional): The icon that is presenting the button action. You can use `si` ([Simple Icons](https://simpleicons.org/)), `mdi` ([Material Design Icons](https://pictogrammers.com/library/mdi/)), [`lucide`](https://lucide.dev/icons/), [`feather`](https://feathericons.com/). You can find the icons in their respective website.  If you use `themeToggle` type, the options will be `iconDark` and `iconLight`.
+
+```json
+    "hero": {
+        "name": "11ty Beer, powered by Eleventy v3.1.0.",
+        "title": "Blogging in 11ty has never been so easy.",
+        "description": "Simply set your configuration and start writing posts in Markdown without hassle.",
+        "image": {
+            "src": "/11ty-beer-hero.svg",
+            "alt": "hero image"
+        },
+        "buttons": [{
+                "text": "Get started",
+                "url": "/posts/getting-started",
+                "sr": "Tutorial on how to use it with Terminal."
+            },
+            {
+                "text": "Learn more",
+                "url": "/posts/configuration",
+                "extraClass": "transparent",
+                "sr": "Makes your website yours with the customizable configuration."
+            },
+            {
+                "text": "GitHub",
+                "url": "https://github.com/w3teal/11ty-beer",
+                "extraClass": "transparent",
+                "icon": "si:github",
+                "sr": "View the source code at GitHub."
+            }
+        ]
+    },
+```
+
+### Features
+
+Here, you can list any number of features you would like to show right after the Hero section.
+
+1. `items`
+    1. `icon`: The icon that is presenting the element. You can use `si` ([Simple Icons](https://simpleicons.org/)), `mdi` ([Material Design Icons](https://pictogrammers.com/library/mdi/)), [`lucide`](https://lucide.dev/icons/), [`feather`](https://feathericons.com/). You can find the icons in their respective website.
+    2. `title`; The title of the feature.
+    3. `helper`: Helper text of the feature.
+2. `button`: An big button with mesh backkground to redirect to another link, only one.  
+If you don't use this, you can delete the `"enabled": true,` part in the configuration.
+    1. `text`: The text that shown in the button.
+    2. `icon`: The icon that is presenting the button action. You can use `si` ([Simple Icons](https://simpleicons.org/)), `mdi` ([Material Design Icons](https://pictogrammers.com/library/mdi/)), [`lucide`](https://lucide.dev/icons/), [`feather`](https://feathericons.com/). You can find the icons in their respective website.
+    3. `url`: What the button will be redirect to for after clicked.
+
+```json
+    "features": {
+        "items": [{
+                "icon": "lucide:hand-metal",
+                "title": "Flawless simple installment",
+                "helper": "npm install. npm start. Deploy to Vercel."
+            },
+            {
+                "icon": "lucide:file-sliders",
+                "title": "Just one configuration to go",
+                "helper": "All in your hand (src/_data/site.json), stress-free."
+            },
+            {
+                "icon": "lucide:panel-right-close",
+                "title": "Easier navigation",
+                "helper": "Modals for posts and tags."
+            },
+            {
+                "icon": "lucide:component",
+                "title": "Designed beautiful and professional",
+                "helper": "With the bold Material Design with blurry sprinkles."
+            }
+        ],
+        "button": {
+            "enabled": true,
+            "text": "Get started",
+            "icon": "lucide:book-up",
+            "url": "/posts/getting-started"
+        }
     }
 ```
 

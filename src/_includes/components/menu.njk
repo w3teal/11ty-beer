@@ -1,10 +1,7 @@
-<nav class="m l left">
-    <header>
-        {% include "components/profile.njk" %}
-    </header>
+<nav class="m l left center-align" id="menu">
     {% for item in site.menuItems %}
     <a {% if item.url %}href="{{ item.url }}"{% endif %}>
-        <i>{% icon "mdi:" + item.icon %}</i>
+        <i>{% icon item.icon %}</i>
         <span>{{ item.title }}</span>
     </a>
     {% endfor %}
@@ -13,7 +10,7 @@
 <nav class="s bottom">
     {% for item in site.menuItems %}
     <a {% if item.url %}href="{{ item.url }}"{% endif %}>
-        <i>{% icon "mdi:" + item.icon %}</i>
+        <i>{% icon item.icon %}</i>
         <span>{{ item.title }}</span>
     </a>
     {% endfor %}
