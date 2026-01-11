@@ -8,7 +8,7 @@
   <meta name="description" content="{{ description or site.description }}">
   <meta name="author" content="{{ site.author }}">
   <meta name="keywords" content="{% set keywords = tags or site.keywords %}{% for tag in keywords %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}">
-  <meta name="generator" content="Eleventy v3.0.0">
+  <meta name="generator" content="{{ eleventy.generator }}">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/ios/32.png">
