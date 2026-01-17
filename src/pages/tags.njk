@@ -11,26 +11,30 @@ eleventyComputed:
 pagefind_ignore: true
 ---
 
-<div class="large-space"></div>
-<h1>
-    <span class="link">#</span><span>{{ tag }}</span>
-</h1>
-<div class="space"></div>
+<div class="marginize">
 
-<div class="grid article-list">
+  <div class="large-space"></div>
+  <h1>
+    <span class="link">#</span><span>{{ tag }}</span>
+  </h1>
+  <div class="space"></div>
+
+  <div class="grid article-list">
     {% for post in collections.posts | filterByTag(tag) | reverse %}
     <article class="large-padding wave round no-elevate s12 m6 l6">
-        <a href="{{ post.url }}"></a>
-        <h2 class="primary-text no-margin">{{ post.data.title }}</h2>
-        <p class="date">{{ post.date | readableDate }} · by {{ site.author }}</p>
-        <p class="no-margin">{{ post.data.description }}</p>
-        <nav class="article-tags scroll max tiny-space">
-            {% for tag in post.data.tags %}
-            {% if "posts" not in tag %}
-            <a class="button border no-round" href="/tags/{{ tag }}/">#{{ tag }}</a>
-            {% endif %}
-            {% endfor %}
-        </nav>
+      <a href="{{ post.url }}"></a>
+      <p class="helper">{{ post.date | readableDate }}</p>
+      <h3 class="sbold no-margin">{{ post.data.title }}</h3>
+      <p class="helper">{{ post.data.description }}</p>
+      <nav class="article-tags scroll max tiny-space">
+        {% for tag in post.data.tags %}
+        {% if "posts" not in tag %}
+        <a class="button border no-round" href="/tags/{{ tag }}/">#{{ tag }}</a>
+        {% endif %}
+        {% endfor %}
+      </nav>
     </article>
     {% endfor %}
+  </div>
+
 </div>

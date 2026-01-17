@@ -1,33 +1,77 @@
+/*
+    Font face
+*/
 @font-face {
-    font-family: Material Symbols Outlined;
-    src: none !important;
+    font-family: 'Google Sans';
+    src: url('/fonts/Google_Sans/GoogleSans-VariableFont_GRAD,opsz,wght.ttf') format('truetype');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: Material Symbols Rounded;
-    src: none !important;
+    font-family: 'Google Sans';
+    src: url('/fonts/Google_Sans/GoogleSans-Italic-VariableFont_GRAD,opsz,wght.ttf') format('truetype');
+    font-weight: 400 700;
+    font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: Material Symbols Sharp;
-    src: none !important;
+    font-family: 'Google Sans Code';
+    src: url('/fonts/Google_Sans_Code/GoogleSansCode-VariableFont_wght.ttf') format('truetype');
+    font-weight: 300 800;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: Material Symbols Subset;
-    src: none !important;
+    font-family: 'Google Sans Code';
+    src: url('/fonts/Google_Sans_Code/GoogleSansCode-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 300 800;
+    font-style: italic;
+    font-display: swap;
 }
+
+
+/*
+    base.
+*/
 
 body {
+    --font: "Google Sans", sans-serif;
+    --font-code: "Google Sans Code", monospace;
     --font-icon: none !important;
-    --mesh-bg: radial-gradient(at 40% 20%, var(--primary-container), transparent 60%),
+
+    --mesh-bg:
+        radial-gradient(at 40% 20%, var(--primary-container), transparent 60%),
         radial-gradient(at 70% 80%, var(--secondary-container), transparent 60%),
         radial-gradient(at 20% 70%, var(--tertiary-container), transparent 60%),
         radial-gradient(at 80% 30%, var(--surface-variant), transparent 60%);
+
+    --noise-bg: url("data:image/svg+xml,%3Csvg viewBox='0 0 280 280' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='10' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+
     --blur: saturate(1.8) blur(0.75rem);
     --glass-bg: color-mix(in srgb, var(--surface-container) 50%, transparent);
     --edge-highlight: inset 0 0.0625rem 0 rgb(255 255 255 / 0.1);
     --shadow-glass: 0 0.75rem 1.5rem -1rem rgb(0 0 0 / 0.5);
+}
+
+
+/*
+    Normalize a bit
+*/
+html {
+    scroll-behavior: smooth;
+    opacity: 0;
+    animation: fadeIn var(--speed3) ease-in-out forwards;
+}
+
+body {
+    font-family: var(--font);
+    font-size: 1.15rem;
+    line-height: 1.675;
+    letter-spacing: 0;
 }
 
 body::before {
@@ -39,44 +83,16 @@ body::before {
     opacity: 0.25;
 }
 
-nav:is(.left, .right) {
-    background: transparent;
+img {
+    max-width: 100%;
 }
 
-html {
-    scroll-behavior: smooth;
-    opacity: 0;
-    animation: fadeIn var(--speed3) ease-in-out forwards;
+img[width][height] {
+    height: auto;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-
-body,
-:is(table) {
-    font-family: var(--font);
-    font-size: 1.15rem;
-    letter-spacing: 0;
-    line-height: 1.675;
-}
-
-body.light i.light,
-body.dark i.dark,
-body:has(#menu.max) .menu-base,
-body:has(#menu:not(.max)) .menu-open {
-    display: none;
-}
-
-.main {
-    max-inline-size: min(100vw, 55rem) !important;
+table {
+    overflow-x: auto;
 }
 
 ::selection {
@@ -88,12 +104,86 @@ body:has(#menu:not(.max)) .menu-open {
     scroll-margin-block-start: 15vh;
 }
 
-.toc * {
-    margin: 0 !important;
+
+/*
+    Layout
+*/
+:is(.post, .marginize, footer) {
+    max-inline-size: min(100vw, 55rem) !important;
+    margin: 0 auto;
 }
 
-.post-header {
-    word-break: break-all;
+nav:is(.left, .right) {
+    background: transparent;
+}
+
+.hero {
+    padding: 5rem;
+}
+
+.features {
+    max-width: 36rem;
+    margin: 10rem auto !important;
+    padding: 0 2rem;
+}
+
+
+/*
+    Typography
+    it's looks better
+*/
+strong,
+.bold {
+    font-weight: 600;
+}
+
+.sbold {
+    font-weight: 500;
+}
+
+.small-text {
+    font-size: .875rem;
+}
+
+.semi-text {
+    font-size: 1rem;
+}
+
+.helper {
+    font-size: 1rem;
+    margin: .5rem 0 !important;
+}
+
+.name {
+    display: block;
+    font-size: 2.8125rem;
+}
+
+.info {
+    margin-block-start: 0;
+    font-weight: 500;
+}
+
+blockquote {
+    padding: 0 1rem;
+}
+
+
+/* 
+    Post-only css
+    it's just available inside of .post element if you ask
+*/
+.post a:not(.button),
+.toc a {
+    text-decoration: underline;
+    color: var(--primary) !important;
+    transition: var(--speed1);
+    user-select: text;
+}
+
+.post a:not(.button):hover,
+.toc a:hover {
+    color: var(--on-primary-container) !important;
 }
 
 .post * {
@@ -105,42 +195,52 @@ body:has(#menu:not(.max)) .menu-open {
     margin: 1.5rem 1.5rem !important;
 }
 
-.post a:not(.button),
-.toc a {
-    display: inline;
-    text-decoration: underline;
-    user-select: text;
-    color: var(--primary) !important;
-    transition: var(--speed1);
+.post-header>* {
+    min-height: 30rem;
+    --_gap: .5rem;
 }
 
-.post a:not(.button):hover,
-.toc a:hover {
-    color: var(--on-primary-container) !important;
+.post-detail h1 {
+    font-weight: 475;
 }
 
-#buttons-container {
-    margin: 4rem;
-    z-index: 2;
+.post-cover {
+    background: var(--mesh-bg), var(--noise-bg);
+    filter: contrast(100%) brightness(100%);
 }
 
-.post svg {
-    display: inline-block;
-    ---size: 1.75rem;
-    width: var(---size);
-    height: var(---size);
+.post-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-strong {
-    font-weight: 600;
+
+/*
+    Lists for something
+*/
+:is(ul, ol) :is(ul, ol) {
+    margin-block-start: 0 !important;
 }
 
-blockquote {
-    padding: 0 1rem;
+:is(ul, ol) li {
+    margin: .25rem 0;
 }
 
+.features .list li {
+    background: var(--secondary-container);
+    color: var(--on-secondary-container);
+    border-radius: .5rem;
+    margin-block-start: .25rem;
+}
+
+
+/*
+    Code ==> more in prism-theme.css
+*/
 pre,
 code {
+    font-family: var(--font-code);
     background: var(--secondary-container);
     color: inherit;
 }
@@ -150,17 +250,8 @@ code {
     border-radius: .25rem;
 }
 
-:is(ul, ol) :is(ul, ol) {
-    margin-block-start: 0 !important;
-}
-
-:is(ul, ol) li {
-    margin: .25rem 0;
-}
-
 .pre-container>* {
-    padding-inline-start: 1.5rem;
-    padding-inline-end: 1.5rem;
+    padding-inline: 1.5rem;
 }
 
 .pre-container pre {
@@ -177,16 +268,13 @@ code {
     overflow-x: auto;
 }
 
-img {
-    max-width: 100%;
-}
 
-img[width][height] {
-    height: auto;
-}
-
-table {
-    overflow-x: auto;
+/*
+    Icons
+*/
+.post svg {
+    width: 1.75rem;
+    height: 1.75rem;
 }
 
 :is(i:not(nav:is(.left, .bottom)>a>i), svg) {
@@ -202,103 +290,10 @@ svg[fill=none] {
     fill: none;
 }
 
-.date,
-.helper {
-    font-size: .875rem;
-    margin-block-end: .25rem;
-    color: var(--secondary);
-}
 
-.name {
-    display: block;
-    font-size: 2.8125rem;
-}
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-*:has(>.header-anchor) {
-    margin-block-start: 2.25rem !important;
-    position: relative;
-}
-
-*:has(>.header-anchor):hover .header-anchor {
-    opacity: 1;
-    visibility: visible;
-}
-
-*:has(>.header-anchor):target .header-anchor {
-    opacity: 1;
-    visibility: visible;
-    color: var(--on-primary-container);
-}
-
-.header-anchor {
-    opacity: 0;
-    transition: .1s;
-    margin-left: 1rem;
-    visibility: hidden;
-}
-
-.header-anchor .tooltip {
-    inset: auto auto 0 50%;
-    transform: translate(-50%, 100%) scale(.9);
-}
-
-.header-anchor:hover .tooltip {
-    transform: translate(-50%, 100%) scale(1);
-}
-
-.header-anchor::before {
-    content: "#";
-}
-
-.default-theme {
-    color: #ffffff;
-}
-
-.article-list article>a {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-}
-
-.article-tags>a {
-    z-index: 2;
-}
-
-.features {
-    max-width: 36rem;
-    margin: 10rem auto !important;
-    padding: 0 2rem;
-}
-
-.features .list li {
-    white-space: wrap;
-    background: var(--secondary-container);
-    color: var(--on-secondary-container);
-    margin-block-start: .25rem;
-    border-radius: .5rem;
-}
-
-.mesh {
-    background: var(--mesh-bg) !important;
-    color: var(--primary) !important;
-}
-
-.mesh:hover {
-    transform: scale(1.1);
-}
-
+/*
+    PageFind Search
+*/
 #pf--wrapper {
     margin-top: .5rem;
     transform: scale(.5) translateY(-2.75rem);
@@ -314,25 +309,25 @@ svg[fill=none] {
     transform: none;
     opacity: 1;
     height: 4rem;
-    pointer-events: all
+    pointer-events: all;
 }
 
 .toolbar::before,
 #pf--search::before {
+    content: "";
     position: absolute;
+    inset: 0;
     z-index: -1;
     backdrop-filter: var(--blur);
-    inset: 0;
+    background-color: var(--glass-bg);
     box-shadow: var(--edge-highlight), var(--shadow-glass);
     border-radius: inherit;
-    background-color: var(--glass-bg);
-    content: "";
 }
 
 #pf--search-results {
     backdrop-filter: var(--blur);
-    box-shadow: var(--edge-highlight), var(--shadow-glass);
     background-color: var(--glass-bg);
+    box-shadow: var(--edge-highlight), var(--shadow-glass);
     width: 100%;
 }
 
@@ -344,4 +339,91 @@ svg[fill=none] {
     all: unset;
     font-weight: bold;
     color: var(--on-surface);
+}
+
+
+/*
+    Header anchor
+*/
+*:has(>.header-anchor) {
+    margin-block-start: 2.25rem !important;
+    position: relative;
+}
+
+.header-anchor {
+    opacity: 0;
+    visibility: hidden;
+    margin-left: 1rem;
+    transition: .1s;
+}
+
+*:has(>.header-anchor):hover .header-anchor,
+*:has(>.header-anchor):target .header-anchor {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header-anchor::before {
+    content: "#";
+}
+
+
+/*
+    Misc.
+*/
+body.light i.light,
+body.dark i.dark,
+body:has(#menu.max) .menu-base,
+body:has(#menu:not(.max)) .menu-open {
+    display: none;
+}
+
+.article-list article>a {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.article-tags>a {
+    z-index: 2;
+}
+
+.default-theme {
+    color: #fff;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.round {
+    border-radius: 1.5rem !important;
+}
+
+.mesh {
+    background: var(--mesh-bg) !important;
+    color: var(--primary) !important;
+}
+
+.mesh:hover {
+    transform: scale(1.1);
+}
+
+#buttons-container {
+    margin: 4rem;
+    z-index: 2;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

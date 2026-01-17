@@ -3,6 +3,9 @@ title: Getting Started
 description: Start building an 11ty Beer website and deploy it.
 date: 2024-12-20
 lastUpdated: 2025-12-31
+cover:
+    img: /img/getting-started.png
+    alt: Terminal screenshot with homepage screenshot
 tags:
  - tutorial
 ---

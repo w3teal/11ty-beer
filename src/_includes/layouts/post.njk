@@ -1,44 +1,74 @@
 ---
 layout: layouts/default.njk
 ---
-<div class="space"></div>
+<div class="large-space"></div>
 
-<header class="large-padding round surface post-header" style="overflow: visible;">
-    <div>
-        <h1 data-pagefind-meta="title" class="link vertical-margin small-margin">{{ title }}</h1>
-        <p class="date" data-pagefind-ignore> 
-            Published on <span data-pagefind-meta="date[datetime]" datetime="{{ date | readableDate }}">{{ date | readableDate }}</span> 
-            {% if lastUpdated %}
-            · <span>Updated on {{ lastUpdated | readableDate }}</span>
+
+<header class="no-padding post-header">
+
+    <div class="grid">
+
+        <div class="s12 m12 l6 round large-padding middle-align surface-container">
+
+            <div class="large-padding">
+                <div>
+                    <p class="bold semi-text no-margin" data-pagefind-ignore>
+                        {{ date | readableDate }} 
+                        {% if lastUpdated %}· <span class="secondary-text">Updated on {{ lastUpdated | readableDate }}</span>{% endif %}
+                    </p>
+                    <h1 data-pagefind-meta="title" class="large no-margin">{{ title }}</h1>
+
+                    <p class="bold semi-text no-margin">{{ description }}</p>
+                </div>
+                <div class="large-space"></div>
+                <nav class="no-margin">
+                    <nav class="scroll max tiny-space" data-pagefind-ignore>
+                        {% for tag in tags %}
+                        {% if "posts" not in tag %}
+                        <a class="button border no-round" href="/tags/{{ tag }}/">#{{ tag }}</a>
+                        {% endif %}
+                        {% endfor %}
+                    </nav>
+                    <nav class="no-space post-action">
+                        <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md"
+                            class="circle button transparent" aria-label="View source of this page">
+                            <i>{% icon "lucide:file-braces" %}</i>
+                            <div class="tooltip bottom">View source of this page</div>
+                        </a>
+                        <a href="https://github.com/{{ site.ghRepo }}/commits/main/src/posts/{{ page.fileSlug }}.md"
+                            class="circle button transparent" aria-label="Edit this page">
+                            <i>{% icon "lucide:file-clock" %}</i>
+                            <div class="tooltip bottom">View history of this page</div>
+                        </a>
+                        <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md"
+                            class="circle button transparent" aria-label="Edit this page">
+                            <i>{% icon "lucide:file-pen" %}</i>
+                            <div class="tooltip bottom">Edit this page</div>
+                        </a>
+                    </nav>
+                </nav>
+            </div>
+        </div>
+
+        <div class="s12 m12 l6 post-cover round">
+            {% if cover %}
+            <img class="responsive" src="{{ cover.img }}" alt="{{ cover.alt }}">
             {% endif %}
-            · <span>by {{ site.author }}</span> 
-        </p>
-        <p class="no-margin">{{ description }}</p>
+        </div>
+
     </div>
-    <nav class="no-margin">
-        <nav class="scroll max tiny-space" data-pagefind-ignore>
-            {% for tag in tags %}
-            {% if "posts" not in tag %}
-            <a class="button border no-round" href="/tags/{{ tag }}/">#{{ tag }}</a>
-            {% endif %}
-            {% endfor %}
-        </nav>
-        <nav class="no-space post-action">
-            <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-label="View source of this page">
-                <i>{% icon "lucide:file-braces" %}</i>
-                <div class="tooltip bottom">View source of this page</div>
-            </a>
-            <a href="https://github.com/{{ site.ghRepo }}/commits/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-label="Edit this page">
-                <i>{% icon "lucide:file-clock" %}</i>
-                <div class="tooltip bottom">View history of this page</div>
-            </a>
-            <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md" class="circle button transparent" aria-label="Edit this page">
-                <i>{% icon "lucide:file-pen" %}</i>
-                <div class="tooltip bottom">Edit this page</div>
-            </a>
-        </nav>
-    </nav>
+    </div>
 </header>
+
+<div class="marginize large-padding">
+    <div class="large-space"></div>
+    <div class="small-text">Posted by</div>
+    <nav>
+        {% include "components/profile.njk" %}
+        <span class="bold">{{ site.author }}</span>
+    </nav>
+    <hr class="large">
+</div>
 
 {% include "components/post-buttons.njk" %}
 

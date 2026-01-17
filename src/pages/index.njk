@@ -4,8 +4,6 @@ layout: layouts/default.njk
 title: "My home page"
 ---
 
-<div class="large-space"></div>
-
 <div class="hero grid">
 
     <div class="s12 m12 l6 middle-align center-align padding">
@@ -51,7 +49,7 @@ title: "My home page"
             <i>{% icon item.icon %}</i>
             <div class="max">
                 <h6 class="small">{{ item.title }}</h6>
-                <div class="helper">{{ item.helper }}</div>
+                <div class="small-text">{{ item.helper }}</div>
             </div>
         </li>
         {% endfor %}

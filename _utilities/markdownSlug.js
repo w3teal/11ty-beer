@@ -13,7 +13,7 @@ function generateSlug(eleventyConfig, slugify) {
     md.renderer.rules.heading_close = (tokens, idx) => {
       const content = tokens[idx - 1]?.content || "heading";
       const slug = slugify(content).toLowerCase();
-      return `<a href="#${slug}" class="header-anchor" aria-label="Permalink to ${content}"><div class="tooltip">Permanent link</div></a></${tokens[idx].tag}>`;
+      return `<a data-pagefind-ignore href="#${slug}" class="header-anchor" aria-label="Permalink to ${content}"><div class="tooltip">Permanent link</div></a></${tokens[idx].tag}>`;
     };
   });
 
