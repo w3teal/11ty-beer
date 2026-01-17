@@ -14,8 +14,12 @@ layout: layouts/default.njk
                 <div>
                     <p class="bold semi-text no-margin" data-pagefind-ignore>
                         {{ date | readableDate }} 
-                        {% if lastUpdated %}· <span class="secondary-text">Updated on {{ lastUpdated | readableDate }}</span>{% endif %}
                     </p>
+                    {% if lastUpdated %}
+                    <p class="secondary-text small-text no-margin" data-pagefind-ignore>
+                        Updated on {{ lastUpdated | readableDate }}
+                    </p>
+                    {% endif %}
                     <h1 data-pagefind-meta="title" class="large no-margin">{{ title }}</h1>
 
                     <p class="bold semi-text no-margin">{{ description }}</p>

@@ -19,7 +19,7 @@ title: "My home page"
 
         <div class="space"></div>
 
-        <nav class="no-space">
+        <nav class="no-space wrap">
             {% for btn in site.hero.buttons %}
             <a class="button {{ btn.extraClass }}" href="{{ btn.url }}">
                 {% if btn.icon %}
@@ -38,9 +38,9 @@ title: "My home page"
 </div>
 
 
-<div class="features wrap center-align">
+<div class="features center-align">
 
-    <ul class="list wrap medium-space">
+    <ul class="list medium-space">
         {% for item in site.features.items %}
         <li class="
           {% if loop.first %}top-round{% endif %}

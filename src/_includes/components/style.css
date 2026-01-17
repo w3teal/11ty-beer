@@ -72,6 +72,7 @@ body {
     font-size: 1.15rem;
     line-height: 1.675;
     letter-spacing: 0;
+    overflow-wrap: anywhere;
 }
 
 body::before {
@@ -118,7 +119,7 @@ nav:is(.left, .right) {
 }
 
 .hero {
-    padding: 5rem;
+    padding: 5rem 0;
 }
 
 .features {
@@ -232,6 +233,7 @@ blockquote {
     color: var(--on-secondary-container);
     border-radius: .5rem;
     margin-block-start: .25rem;
+    white-space: normal;
 }
 
 
