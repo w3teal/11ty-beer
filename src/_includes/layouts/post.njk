@@ -6,62 +6,69 @@ layout: layouts/default.njk
 
 <header class="no-padding post-header">
 
+    {% if site.cover %}
     <div class="grid">
 
-        <div class="s12 m12 l6 round large-padding middle-align surface-container">
+        <div class="s12 m12 l6 round large-padding surface-container">
+    {% else %}
+            <div class="round large-padding surface-container">
+    {% endif %}
 
-            <div class="large-padding">
-                <div>
-                    <p class="bold semi-text no-margin" data-pagefind-ignore>
-                        {{ date | readableDate }} 
-                    </p>
-                    {% if lastUpdated %}
-                    <p class="secondary-text small-text no-margin" data-pagefind-ignore>
-                        Updated on {{ lastUpdated | readableDate }}
-                    </p>
-                    {% endif %}
-                    <h1 data-pagefind-meta="title" class="large no-margin">{{ title }}</h1>
-
-                    <p class="bold semi-text no-margin">{{ description }}</p>
-                </div>
-                <div class="large-space"></div>
-                <nav class="no-margin">
-                    <nav class="scroll max tiny-space" data-pagefind-ignore>
-                        {% for tag in tags %}
-                        {% if "posts" not in tag %}
-                        <a class="button border no-round" href="/tags/{{ tag }}/">#{{ tag }}</a>
+                <div class="large-padding center middle">
+                    <div>
+                        <p class="bold semi-text no-margin" data-pagefind-ignore>
+                            {{ date | readableDate }}
+                        </p>
+                        {% if lastUpdated %}
+                        <p class="secondary-text small-text no-margin" data-pagefind-ignore>
+                            Updated on {{ lastUpdated | readableDate }}
+                        </p>
                         {% endif %}
-                        {% endfor %}
+                        <h1 data-pagefind-meta="title" class="large no-margin">{{ title }}</h1>
+
+                        <p class="bold semi-text no-margin">{{ description }}</p>
+                    </div>
+                    <div class="large-space"></div>
+                    <nav class="no-margin">
+                        <nav class="scroll max tiny-space" data-pagefind-ignore>
+                            {% for tag in tags %}
+                            {% if "posts" not in tag %}
+                            <a class="button border no-round" href="/tags/{{ tag }}/">#{{ tag }}</a>
+                            {% endif %}
+                            {% endfor %}
+                        </nav>
+                        <nav class="no-space post-action">
+                            <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md"
+                                class="circle button transparent" aria-label="View source of this page">
+                                <i>{% icon "lucide:file-braces" %}</i>
+                                <div class="tooltip bottom">View source of this page</div>
+                            </a>
+                            <a href="https://github.com/{{ site.ghRepo }}/commits/main/src/posts/{{ page.fileSlug }}.md"
+                                class="circle button transparent" aria-label="Edit this page">
+                                <i>{% icon "lucide:file-clock" %}</i>
+                                <div class="tooltip bottom">View history of this page</div>
+                            </a>
+                            <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md"
+                                class="circle button transparent" aria-label="Edit this page">
+                                <i>{% icon "lucide:file-pen" %}</i>
+                                <div class="tooltip bottom">Edit this page</div>
+                            </a>
+                        </nav>
                     </nav>
-                    <nav class="no-space post-action">
-                        <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md"
-                            class="circle button transparent" aria-label="View source of this page">
-                            <i>{% icon "lucide:file-braces" %}</i>
-                            <div class="tooltip bottom">View source of this page</div>
-                        </a>
-                        <a href="https://github.com/{{ site.ghRepo }}/commits/main/src/posts/{{ page.fileSlug }}.md"
-                            class="circle button transparent" aria-label="Edit this page">
-                            <i>{% icon "lucide:file-clock" %}</i>
-                            <div class="tooltip bottom">View history of this page</div>
-                        </a>
-                        <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md"
-                            class="circle button transparent" aria-label="Edit this page">
-                            <i>{% icon "lucide:file-pen" %}</i>
-                            <div class="tooltip bottom">Edit this page</div>
-                        </a>
-                    </nav>
-                </nav>
+                </div>
             </div>
-        </div>
 
-        <div class="s12 m12 l6 post-cover round">
-            {% if cover %}
-            <img class="responsive" src="{{ cover.img }}" alt="{{ cover.alt }}">
-            {% endif %}
-        </div>
+    {% if site.cover %}
+            <div class="s12 m12 l6 post-cover round">
+                {% if cover %}
+                <img class="responsive" src="{{ cover.img }}" alt="{{ cover.alt }}" title="{{ cover.alt }}">
+                {% endif %}
+            </div>
 
+        </div>
     </div>
-    </div>
+    {% endif %}
+
 </header>
 
 <div class="marginize large-padding">

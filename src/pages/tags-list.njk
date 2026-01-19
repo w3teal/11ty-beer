@@ -6,13 +6,14 @@ description: All the tags i used for the posts in this website.
 pagefind_ignore: true
 ---
 
+<div class="marginize padding">
 
-<div class="large-space"></div>
-<h1>{{ title }}</h1>
-<div class="space"></div>
+  <div class="large-space"></div>
+  <h1>{{ title }}</h1>
+  <div class="space"></div>
 
-<article class="no-padding" style="overflow: hidden;">
-  {% for tag in collections.tagsList %}
+  <article class="no-padding round" style="overflow: hidden;">
+    {% for tag in collections.tagsList %}
     <a class="row wave padding" href="/tags/{{ tag | slug }}/">
       <i>{% icon "lucide:hash" %}</i>
       <div class="max">
@@ -20,5 +21,7 @@ pagefind_ignore: true
       </div>
     </a>
     <hr>
-  {% endfor %}
-</article>
+    {% endfor %}
+  </article>
+
+</div>

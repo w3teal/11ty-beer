@@ -3,6 +3,9 @@ title: Extras
 description: Some extra features like Image and Icon shortcodes.
 date: 2025-02-13
 lastUpdated: 2025-12-31
+cover:
+    img: /img/extras.png
+    alt: Artistic picture with nunjucks shortcode symbol, image, and icon/
 tags:
  - tutorial
 snippet:

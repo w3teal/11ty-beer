@@ -2,7 +2,10 @@
 title: Configuration
 description: Makes your website yours with the customizable configuration.
 date: 2024-12-21
-lastUpdated: 2025-12-31
+lastUpdated: 2026-01-19
+cover:
+    img: /img/configuration.png
+    alt: Abstract artwork reflecting an identity with W3Teal logo.
 tags:
  - tutorial
  - config
@@ -85,6 +88,15 @@ Example of the usage: `<meta name="keywords" content="eleventy, material, pwa">`
 
 ```json
     "keywords": ["eleventy", "material", "pwa"],
+```
+
+## Cover
+
+An cover image that shown in **tags/** pages, and beside of the post header. You still able to use the `cover` in frontmatter element for the Opengraph image too.  
+[Learn more about Cover image](http://localhost:8080/posts/11ty-beer-13/#cover-image)
+
+```json
+    "cover": true,
 ```
 
 ## Social items

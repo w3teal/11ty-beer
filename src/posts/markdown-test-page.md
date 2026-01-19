@@ -2,6 +2,9 @@
 title: Markdown Test Page
 description: This is a test page filled with markdown elements to be used to provide visual feedback.
 date: 2019-07-14
+cover:
+    img: /img/markdown-test-page.png
+    alt: Symbol that used to write in Markdown.
 tags:
  - markdown
  - test

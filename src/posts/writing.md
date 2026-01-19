@@ -2,6 +2,9 @@
 title: Writing
 description: The right way to writing a Markdown posts.
 date: 2025-02-13
+cover:
+    img: /img/writing.png
+    alt: Terminal screenshot with homepage screenshot
 tags:
  - tutorial
  - markdown

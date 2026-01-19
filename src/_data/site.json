@@ -9,6 +9,7 @@
     "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
     "ghRepo": "w3teal/11ty-beer",
     "keywords": ["eleventy", "material", "pwa"],
+    "cover": true,
     "socialItems": [{
             "title": "GitHub",
             "url": "https://github.com/w3teal/11ty-beer",

@@ -2,6 +2,9 @@
 title: Favicons
 description: An demonstration of the generated favicons by PWA Builder.
 date: 2025-01-30
+cover:
+    img: /img/favicons.png
+    alt: Idk, uh... the mountain?
 tags:
  - demo
  - config
