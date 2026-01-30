@@ -1,3 +1,7 @@
+> # This repository has been moved!
+> 
+> See this repository on [SourceHut](https://sourcehut.org/): https://git.sr.ht/~w3teal/11ty-beer
+
 # 11ty Beer
 
 An 11ty blog template with Material Design, PWA and minified files that simply works.
